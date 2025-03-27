@@ -124,7 +124,7 @@ Semantic information is fused with the depth observation to in a Monte Carlo Loc
     (Left) Ground truth pose for the above & (Right) Localization pose estimates from our system.
 </div>
 
-## Preminary Results
+## Preliminary Results
 (Detailed results are coming soon)
 - Without semantic information, the system converges incorrectly.
 - Using semantic information, our system performs robust global localization and maintains it.
