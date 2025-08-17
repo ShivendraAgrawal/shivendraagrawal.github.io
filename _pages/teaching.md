@@ -17,24 +17,49 @@ nav_order: 6
 ## Teaching Assistant
 
 1. **CSCI 3104 Algorithms** - *Outstanding TA award (2017-2018, 2018-2019)*
+    - Led weekly recitations and office hours
+    - Developed automated scripts to transfer feedback to Moodle, reducing manual effort and turnaround time
 2. **CSCI 3002 HCI** - *2020 Fall*
+    - Led weekly recitations and office hours
+    - Introduced modern mobile- and web-centric examples, aligning course content with current UI/UX practices
 3. **CSCI 3302 Intro to Robotics** - *David T. Spalding Graduate Teaching Fund Fellowship for excellence in teaching (2021-2022)*
+    - Led weekly recitations and office hours
+    - Designed the course final project
+    - Designed simulation-based automated grading scripts for assignments, enabling the course to scale from ~40 to ~120 students
 4. **CSCI 4302/5302 Advanced Robotics** - *2023 Spring*
+    - Led weekly recitations and office hours
 
 ---
 ## YouTube 
 My tutorial on 3-CNF SAT to Subset Sum reduction is the **most watched video on the topic** on the internet. Check out the nice comments I got :)
 
-[[Link to the YouTube tutorial]](https://youtu.be/k8RkYp5KhhU?si=-LQI-fJ0rnPpG4gg)
-<!-- <div class="video-container">
+<!-- [[Link to the YouTube tutorial]](https://youtu.be/k8RkYp5KhhU?si=-LQI-fJ0rnPpG4gg)
+<div class="video-container">
     <iframe src="https://www.youtube.com/embed/k8RkYp5KhhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div> -->
+<!-- use unique classes to avoid theme collisions -->
+<div class="yt-wrap half-left">
+  <div class="yt-aspect">
+    <iframe
+      src="https://www.youtube.com/embed/k8RkYp5KhhU"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
 
 ---
 ## Student Evals
 **Here are some of the evaluations provided by my students.**
 
-These are by far my most cherished professional achievements. 
-<div class="pdf-container" width="100%" height="4000px">
-<iframe src="/assets/pdf/SomePastFCQs.pdf#toolbar=1" > </iframe>
-</div>
+(These are by far my most cherished professional achievements.)
+
+<object data="/assets/pdf/SomePastFCQs.pdf#toolbar=1"
+        type="application/pdf"
+        width="100%" height="800px">
+  <p>Your browser does not support PDFs. 
+     <a href="/assets/pdf/SomePastFCQs.pdf">Download instead</a>.
+  </p>
+</object>
