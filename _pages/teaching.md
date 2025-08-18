@@ -18,14 +18,14 @@ nav_order: 6
 
 1. **CSCI 3104 Algorithms** - *Outstanding TA award (2017-2018, 2018-2019)*
     - Led weekly recitations and office hours
-    - Developed automated scripts to transfer feedback to Moodle, reducing manual effort and turnaround time
+    - Developed [automated scripts](https://github.com/ShivendraAgrawal/Sheet_to_Moodle) to transfer feedback to Moodle, reducing manual effort and turnaround time
 2. **CSCI 3002 HCI** - *2020 Fall*
     - Led weekly recitations and office hours
     - Introduced modern mobile- and web-centric examples, aligning course content with current UI/UX practices
 3. **CSCI 3302 Intro to Robotics** - *David T. Spalding Graduate Teaching Fund Fellowship for excellence in teaching (2021-2022)*
     - Led weekly recitations and office hours
     - Designed the course final project
-    - Designed simulation-based automated grading scripts for assignments, enabling the course to scale from ~40 to ~120 students
+    - Designed simulation-based automated grading scripts, enabling the course to scale from ~40 to ~120 students
 4. **CSCI 4302/5302 Advanced Robotics** - *2023 Spring*
     - Led weekly recitations and office hours
 
