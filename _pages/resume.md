@@ -5,7 +5,7 @@ title: CV
 description: 
 nav: true
 ---
-Last Updated: Dec 2024
+Last Updated: Dec 2025
 
 For best viewing experience, view it on desktop or android. The pdf (3 pages) does not load completely on IOS devices.
 <!-- &nbsp;&nbsp;&nbsp;[(Downloadable link)](https://shivendraagrawal.github.io/assets/pdf/resume.pdf) -->

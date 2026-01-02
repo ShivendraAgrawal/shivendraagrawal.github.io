@@ -28,6 +28,8 @@ nav_order: 6
     - Designed simulation-based automated grading scripts, enabling the course to scale from ~40 to ~120 students
 4. **CSCI 4302/5302 Advanced Robotics** - *2023 Spring*
     - Led weekly recitations and office hours
+5. **CSCI 5322 Algorithmic Foundations of Human-Robot Interaction** - *2025 Fall*
+    - Led office hours and supervised projects
 
 ---
 ## YouTube 
