@@ -54,7 +54,9 @@ My tutorial on 3-CNF SAT to Subset Sum reduction is the **most watched video on 
 
 ---
 ## Student Evals
-**Here are some of the evaluations provided by my students.**
+Here are the subjective evaluations provided by my students collected in a single file.
+
+**You can also find the details evaluations with both objective and subjective evaluation metrics for each term [here](https://drive.google.com/file/d/1aUJi3E5z0h-DDdLhtGoowtAWQWyqjFk0/view?usp=sharing).**
 
 (These are by far my most cherished professional achievements.)
 
