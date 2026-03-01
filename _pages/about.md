@@ -31,13 +31,13 @@ My thesis aims to bridge this gap by interpreting and utilizing implicit environ
 
 **Summary of some of my work:** 
 
-* **Explainable Robotic Coaching:** A framework for a robot to infer a human partner's likely mental model by observing suboptimal actions to provide targeted coaching with justifications (HRI '19 Best Paper Runner-up). [Project page](https://shivendraagrawal.github.io/projects/explainable_ai/)
+* **Explainable Robotic Coaching:** A framework for a robot to infer a human partner's likely mental model by observing suboptimal actions to provide targeted coaching with justifications **(HRI '19 Best Paper Runner-up)**. [Project page](https://shivendraagrawal.github.io/projects/explainable_ai/)
 
 * **Designing Embodied AI for Social Context:** Understanding that human environments are governed by social norms, I developed a perceptive robotic cane that used models from psychology to identify socially appropriate seating locations (optimizing for privacy and intimacy), deploying all perception locally on the edge. [Project page](https://shivendraagrawal.github.io/projects/social_guidance/)
 
 * **Learning Decision-Making Policies from Human Behavior:** My “ShelfHelp” system learned an optimal guidance policy from human behavioral data to provide manipulation guidance (featured in national media). [Project page](https://shivendraagrawal.github.io/projects/shelfhelp/) 
 
-* **Robust Semantic Localization (ShelfAware):** Traditional methods falter in geometrically ambiguous (like retail aisles) environments. “ShelfAware” leverages semantic features within a probabilistic framework to handle quasi-static changes. It does robust global localization using onboard RGB-D/VIO sensors, eliminating the need for environmental augmentation. [Project page](https://shivendraagrawal.github.io/projects/shelfmcl/) 
+* **Robust Semantic Localization:** Traditional methods falter in geometrically ambiguous (like retail aisles) environments. “ShelfAware” leverages semantic features within a probabilistic framework to handle quasi-static changes. It does global localization using onboard RGB-D/VIO sensors, eliminating the need for environmental augmentation. [Project page](https://shivendraagrawal.github.io/projects/shelfmcl/) 
 
 
 **News 2026:**
