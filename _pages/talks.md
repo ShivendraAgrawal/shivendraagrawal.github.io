@@ -8,6 +8,12 @@ nav_order: 8
 ---
 ## Invited Talks & Guest Lectures
 
+*   **Hidden Markov Models in Intro to AI**  
+    *Guest Lecture, CSCI 3202: Introduction to Artificial Intelligence, CU Boulder*  
+    February 27, 2026  
+    [[Lecture Notes]]({{ "https://drive.google.com/file/d/1ldNL-rF6MjZzjDeaS-m7PZb5l5NWx9zG/view?usp=sharing" | absolute_url }}){:target="\_blank"}
+
+
 *   **Foundations for Context-Aware Assistive Guidance: Integrating Implicit Semantic, Social, and Physical Cues**  
     *Robotics Seminar, University of Colorado Boulder*  
     April 15, 2024  

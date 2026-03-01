@@ -30,6 +30,8 @@ nav_order: 6
     - Led weekly recitations and office hours
 5. **CSCI 5322 Algorithmic Foundations of Human-Robot Interaction** - *2025 Fall*
     - Led office hours and supervised projects
+6. **CSCI 3202 Introduction to Artificial Intelligence** - *2026 Spring*
+    - Led office hours, made questions for exams, gave guest lecture, and supervised projects
 
 ---
 ## YouTube 
@@ -56,7 +58,7 @@ My tutorial on 3-CNF SAT to Subset Sum reduction is the **most watched video on 
 ## Student Evals
 Here are the subjective evaluations provided by my students collected in a single file.
 
-**You can also find the details evaluations with both objective and subjective evaluation metrics for each term [here](https://drive.google.com/file/d/1aUJi3E5z0h-DDdLhtGoowtAWQWyqjFk0/view?usp=sharing).**
+**You can also find the details evaluations with both objective and subjective evaluation metrics for each term [[here]](https://drive.google.com/file/d/1aUJi3E5z0h-DDdLhtGoowtAWQWyqjFk0/view?usp=sharing).**
 
 (These are by far my most cherished professional achievements.)
 
