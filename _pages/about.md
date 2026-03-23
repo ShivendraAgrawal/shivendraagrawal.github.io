@@ -17,7 +17,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-**About myself:** I am a final year CS Ph.D. student with Prof. Bradley Hayes at CU Boulder. I am interested in Robotics, Accessibility, and Human Robotics Interaction (HRI) and unifying them to create real-world Assistive Technology. My thesis involves creating foundational methods that enable assistive systems to utilize rich social and semantic cues to support visually impaired individuals. I enjoy teaching and mentoring students and have been fortunate to receive multiple Outstanding TA awards and Instructor awards for excellence in teaching.
+**About myself:** Ph.D. Candidate in Computer Science developing context-aware human-centered AI for real-world robotics. My research bridges Robotics, HRI, and Embodied AI to create context-aware systems that interpret semantic, social, and geometric cues. Technical expertise spans computer vision deployment, full-stack system architecture, and human-subject evaluation, leveraging modern techniques from probabilistic planning to Foundation Models (VLMs) for deployable embodied AI. Proven track record of publishing in top-tier venues (HRI, AAMAS, IROS). Award-winning educator and dedicated mentor, recognized for instructional excellence with multiple Outstanding TA and Instructor awards.
 
 <!-- ***I am on the job market for a faculty position starting Fall 2026.*** -->
 
