@@ -56,16 +56,16 @@ My tutorial on 3-CNF SAT to Subset Sum reduction is the **most watched video on 
 
 ---
 ## Student Evals
-Here are the subjective evaluations provided by my students collected in a single file.
+Here is a summary of the teaching evaluations provided by my students.
 
-**You can also find the details evaluations with both objective and subjective evaluation metrics for each term [[here]](https://drive.google.com/file/d/1aUJi3E5z0h-DDdLhtGoowtAWQWyqjFk0/view?usp=sharing).**
+**You can also find the detailed evaluations with both objective and subjective metrics for each term [[here]](https://drive.google.com/file/d/1aUJi3E5z0h-DDdLhtGoowtAWQWyqjFk0/view?usp=sharing), and the subjective feedback extracted from them [[here]](/assets/pdf/SomePastFCQs.pdf).**
 
 (These are by far my most cherished professional achievements.)
 
-<object data="/assets/pdf/SomePastFCQs.pdf#toolbar=1"
+<object data="/assets/pdf/Summary%20Teaching%20Evaluation.pdf#toolbar=1"
         type="application/pdf"
         width="100%" height="800px">
   <p>Your browser does not support PDFs. 
-     <a href="/assets/pdf/SomePastFCQs.pdf">Download instead</a>.
+     <a href="/assets/pdf/Summary%20Teaching%20Evaluation.pdf">Download instead</a>.
   </p>
 </object>
