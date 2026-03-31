@@ -42,6 +42,8 @@ My thesis aims to bridge this gap by interpreting and utilizing implicit environ
 
 **News 2026:**
 
+* (Apr 2026) [RA-L Paper Accepted!](https://shivendraagrawal.github.io/projects/shelfmcl/)
+* (Mar 2026) [Won the Dissertation Completion Fellowship 2026](https://shivendraagrawal.github.io/)
 * (Feb 2026) [Guest lecture on Hidden Markov Models in the Intro to AI class at CU Boulder](https://drive.google.com/file/d/1ldNL-rF6MjZzjDeaS-m7PZb5l5NWx9zG/view?usp=sharing)
 * (Feb 2026) [Awarded Best Poster at the Annual Research Expo 2026 CU Boulder](https://www.linkedin.com/posts/department-of-computer-science-university-of-colorado_cuboulder-csresearch-researchexpo-activity-7427755388349075457-4lk4?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAg06zIB0-leJnAXWLF6-DZ2KHWMSxjEtT4)
 * (Jan 2026) [Selected as the Next Gen Cohort for CERAWeek 2026](https://www.ceraweek.com/en/partner-programs/nextgen) (Could not attend due to unavoidable circumstances)
