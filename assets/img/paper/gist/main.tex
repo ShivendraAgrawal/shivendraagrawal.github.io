@@ -1,0 +1,474 @@
+%%
+%% This is file `sample-sigconf.tex',
+%% generated with the docstrip utility.
+%%
+\documentclass[sigconf,anonymous,review]{acmart}
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+\setcopyright{acmlicensed}
+\copyrightyear{2026}
+\acmYear{2026}
+\acmDOI{XXXXXXX.XXXXXXX}
+\acmConference[ICMI '26]{International Conference on Multimodal Interaction}{November 2026}{TBD}
+\acmISBN{978-1-4503-XXXX-X/2026/11}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{bm}
+
+% Global float padding reduction to prevent end-of-document dumping
+\setlength{\textfloatsep}{12pt plus 2.0pt minus 2.0pt}
+\setlength{\floatsep}{12pt plus 2.0pt minus 2.0pt}
+
+\renewcommand{\shortauthors}{Author et al.}
+
+\begin{document}
+
+\title{GIST: Multimodal Knowledge Extraction and Spatial Grounding via Intelligent Semantic Topology}
+
+\begin{abstract}
+Navigating and searching complex, densely packed environments such as retail stores, warehouses, libraries, and hospitals poses a great spatial grounding challenge for both humans and embodied AI. In these environments, dense visual features become stale quickly given the quasi-static nature of items, and long-tail semantic distributions pose a challenge for dedicated computer vision methods. Vision-Language Models (VLMs) have emerged as a popular paradigm to help assistive systems and robots understand and navigate semantically-rich spaces, yet they still struggle with spatial grounding in dense, cluttered, quasi-static environments. We present \emph{GIST} (Grounded Intelligent Semantic Topology), a multimodal knowledge extraction pipeline that transforms a consumer-grade mobile point cloud into a semantically annotated navigation topology. Our architecture distills the scene into a 2D occupancy map, extracts its topological layout, and overlays a lightweight semantic layer via intelligent keyframe and semantic selection. We demonstrate the versatility of this structured, semantically-rich spatial knowledge through critical downstream Human-AI interaction tasks: (1) an intent-driven \emph{Semantic Search} engine that actively infers categorical alternatives and zones when exact matches fail; (2) a one-shot \emph{Semantic Localizer} achieving 1.04\,m top-5 mean translation error; (3) a \emph{Zone Classification} module that segments the walkable floor plan into high-level semantic regions; and (4) a \emph{Visually-Grounded Instruction Generator} that synthesizes optimal paths into egocentric, landmark-rich natural language routing. Evaluated via an independent multi-criteria LLM evaluation protocol, GIST outperforms navigation instruction generation baselines. Finally, an in-situ formative evaluation ($N=5$) yields an 80\% navigation success rate relying solely on verbal cues, validating the system's capacity for universal design.
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+ <concept>
+  <concept_id>10010147.10010178.10010199</concept_id>
+  <concept_desc>Computing methodologies~Planning and scheduling</concept_desc>
+  <concept_significance>500</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10010147.10010178.10010219.10010220</concept_id>
+  <concept_desc>Computing methodologies~Multi-agent systems</concept_desc>
+  <concept_significance>300</concept_significance>
+ </concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Computing methodologies~Planning and scheduling}
+\ccsdesc[300]{Computing methodologies~Multi-agent systems}
+
+\keywords{Navigation, Topology, Semantic Map, Multimodal Interaction, Universal Design}
+
+\begin{teaserfigure}
+\centering
+\includegraphics[width=\textwidth]{figures/system.png}
+\caption{The \emph{GIST} Multimodal Knowledge Extraction Architecture. Raw multimodal inputs (RGB-D and mobile odometry) are distilled via intelligent keyframe selection, representative object selection, and VLM labeling into Structured Spatial Knowledge. This shared representation enables robust downstream Human-AI interaction and autonomous system tasks, including intent-aware semantic search, global pose localization, and spatially grounded natural language routing.}
+\label{fig:system_arch}
+\end{teaserfigure}
+
+\maketitle
+
+\section{Introduction}
+
+Navigating and searching complex, densely packed environments poses a great spatial grounding challenge for both humans and autonomous embodied AI. While popular mapping techniques map geometric space \cite{nav2_amcl}, they fail to capture the semantic landscape required for intuitive, cognitive-offloading search and navigation. Dense 3D semantic maps, conversely, are often too heavy and require server-grade systems to deploy \cite{gu2024conceptgraphs}.
+
+In densely packed, cluttered environments (e.g., retail stores, warehouses, and libraries), navigation relies heavily on semantic landmarks such as product categories, aisle boundaries, and zone transitions rather than strict metric distance. Foundational research in spatial cognition~\cite{lovelace1999elements} establishes that humans navigate by chunking environments into topological nodes connected by semantic cues. A shopper instructed to ``walk 8.6 meters forward and then turn right'' will experience high cognitive load and spatial uncertainty, whereas ``walk past the lentils on your left, then turn right'' is intuitive, immediately actionable, and reassuring.
+
+These spaces are inherently \emph{quasi-static}—environments where the spatial distribution, orientation, and quantity of objects evolve over extended timescales, such as fluctuating product inventory on grocery shelves or moving books in a library. Furthermore, as demonstrated by our 3,500 sq. ft. international grocery store testbed, they exhibit extreme long-tail distributions of culturally specific, visually similar items that induce severe perceptual aliasing. While recent Vision-and-Language Navigation (VLN) frameworks excel in synthetic domains~\cite{krantz2020vlnce, chen2024mapgpt}, they consistently underperform in such real-world settings~\cite{aghzal2025evaluating, wang2025rethinking, windecker2025navitrace}. They suffer from brittle visual perception, hallucinate transient landmarks, and fundamentally lack spatial grounding when distinct goal semantics are not immediately visible.
+
+Current instruction generation frameworks, such as NavComposer~\cite{he2025navcomposer}, attempt routing via sequential RGB video streams. However, this approach paradoxically requires pre-walking a route to generate instructions for it. By relying strictly on ungrounded visual sequences, these models frequently reference dynamic, transient objects (e.g., shopping carts) and fail to capture definitive topological boundaries, optimizing for robotic data generation pipelines while ignoring critical human-factors.
+
+To bridge this gap, we introduce \emph{GIST} (\textbf{G}rounded \textbf{I}ntelligent \textbf{S}emantic \textbf{T}opology), an end-to-end framework for Multimodal Knowledge Extraction (Figure~\ref{fig:system_arch}). From a single consumer-grade cellphone LiDAR point cloud, our system distills thousands of frames into a lightweight knowledge graph. Operating on a 2D occupancy grid of the environment, we chain intelligent keyframe selection, representative object selection, and VLM labeling to construct a \emph{Semantic Topology}. Discovered products are anchored to a skeletonized navigation graph, strictly decoupling deterministic geometric safety from multimodal semantic reasoning.
+
+This structured representation supports critical downstream Human-AI interaction tasks: (1) \textit{Intent-Driven Search \& Missing Goal Estimation} to gracefully estimate zone locations when exact matches are not available on the semantic map; (2) \textit{Semantic Localization}, a one-shot localizer estimating an agent's discrete pose $(x, y, \theta)$ from a single smartphone image using pure text-embeddings; (3) a \emph{Zone Classification} module that segments the walkable floor plan into high-level semantic regions; and (4) \textit{Visually-Grounded Spatial Routing}.The routing engine translates spatial paths into view-independent, natural language directions, serving a dual purpose: providing accessible cognitive offloading for human users (Universal Design)~\cite{agrawal2023assistive} and acting as an automated data generation engine for grounded VLN robotic training.
+
+Through extensive evaluation across 15 real-world scenarios, we demonstrate that GIST's explicit topological structures significantly outperform raw RGB sequence baselines in multi-criteria LLM evaluations, particularly as route complexity increases. Finally, a formative in-situ ecological probe ($N=5$) yields an 80\% navigation success rate relying solely on generated verbal cues, validating the framework's robust real-world utility.
+
+
+\section{Related Work}
+\emph{GIST} facilitates several critical human-AI and embodied AI tasks; the following subsections present related work foundational to these domains. 
+
+\subsection{Vision-and-Language Navigation (VLN)}
+VLN requires an embodied agent to interpret natural language instructions and navigate 3D environments solely from visual observations~\cite{anderson2018vln}. Early benchmarks operated in discrete graph-based settings where agents teleport between panoramic viewpoints~\cite{qi2020reverie}. While VLN-CE~\cite{krantz2020vlnce} pushed toward continuous environments requiring low-level motor control, these systems still assume high-quality instructions are already provided.
+
+Automated instruction generation has emerged to scale VLN training data. Early speaker models used LSTM-based networks to translate panoramic sequences into directions~\cite{fried2018speaker}, lacking spatial specificity. Recent models like NavRAG~\cite{wang2025navrag} utilize scene description trees to provide fine-grained context. Goal-conditioned generation models like GoViG~\cite{wu2025govig} attempt to produce instructions from only a first-person observation and a goal image. NavComposer~\cite{he2025navcomposer} generates instructions from RGB image sequences combined with discrete action traces. However, because sequence-to-sequence methods bypass explicit topological reasoning, they struggle to infer path geometry from images alone. This results in instructions that reference visually salient but transient objects (\textit{e.g.}, red crates, shopping carts) and cannot reliably specify definitive turn sequences, exact metric distances, or macro-level navigation instructions.
+
+\subsection{Localization in Quasi-Static Environments}
+Particle filter-based localization methods (e.g., AMCL~\cite{foxKLDSamplingAdaptiveParticle2001, nav2_amcl}) remain standard for onboard robotics. However, their reliance on static geometric maps makes them notoriously brittle in quasi-static environments like warehouses and retail stores, where local semantics fluctuate even when global geometry remains constant~\cite{yinSurveyGlobalLiDAR2024}.
+
+Semantic SLAM systems~\cite{goswamiEfficientRealTimeLocalization2023a, zimmermanLongTermLocalizationUsing2023} often assume landmark stability, an assumption that fails in real-world quasi-static environments where objects frequently shift or fluctuate in quantity. Recent probabilistic approaches like \emph{ShelfAware}~\cite{agrawal2025shelfaware} model shelf semantics as statistical distributions over object counts to handle these changes. However, they rely strictly on low-level visual features, which often fail to distinguish semantically distinct but visually similar items (e.g., bags of sugar, salt, or flour). Deep visual localization methods~\cite{dong2025reloc3r, loiseau2025alligat0r} and implicit neural representations~\cite{kuangIRMCLImplicitRepresentationBased2023} demonstrate impressive accuracy but require server-grade compute, precluding real-time use on wearable edge devices. GIST overcomes these limitations by utilizing one-shot, text-embedding-based semantics to enable instant global localization on lightweight hardware.
+
+\subsection{Assistive Guidance Systems}
+Navigating large retail spaces or warehouses presents a critical challenge for people with visual impairments, involving macro-navigation in the locomotor space and micro-navigation in the haptic space~\cite{gharpure2008robot}.
+
+\textbf{Macro-Navigation and Product Search:} Recent work focuses largely on navigation inside the store~\cite{kulyukin2010accessible,kulyukin2005robocart,kulyukin2006ergonomics}. Solutions that rely on environmental augmentation, such as RFID tags~\cite{lopez-de-ipinaBlindShoppingEnablingAccessible2011} or Bluetooth beacons, introduce high maintenance overhead and barriers to adoption. For product identification, existing techniques using fixed-class object detectors~\cite{feng2020research} or barcode scanning~\cite{lookout, nicholson2009shoptalk} are impractical for the sheer volume of long-tail retail items~\cite{NielsenIQ}. While researchers have explored conversational agents~\cite{kamikubo2024we, kaniwa2024chitchatguide} and the ``last few meters'' way-finding problem~\cite{saha2019closing}, these systems often still rely on BLE beacons, underscoring a critical need for uninstrumented, scalable semantic search.
+
+\textbf{Manipulation Guidance and Social Dynamics:} Once a user is in the vicinity of a product, manipulation guidance helps them find regions of interest~\cite{vazquez2014assisted, bonani2018my}. Crowdsourced assistance like Be My Eyes~\cite{bemyeyes} or VizWiz~\cite{bigham2010vizwiz} relies on human availability. Some researchers have focused on the product retrieval sub-task by providing verbal manipulation guidance for product retrieval off the shelf \cite{agrawalShelfHelpEmpoweringHumans2023, agrawal2023assistive}. However, these systems inherently assume the user is already perfectly localized in front of the correct shelf~\cite{zientara2017third}. GIST directly bridges this gap by creating intermediate spatial knowledge that focuses on solving the prerequisite locomotor navigation problem by searching for desired goals in such spaces and estimating the current pose of the system.
+
+\section{Multimodal Knowledge Extraction}
+
+Our offline pipeline transforms raw consumer-grade mobile data into a semantic topology. This process operates entirely zero-shot, requiring no manual annotation.
+
+\subsection{Mobile Data to 2D Occupancy}
+We captured a real-world, 3,500 sq ft international grocery store using a consumer mobile device equipped with LiDAR. A 14.5-minute traversal yielded 52,006 RGB-D frames, which were subsampled $6\times$ to 8,668 frames ($\sim$10 fps) alongside 6-DoF ARKit visual-inertial odometry. To ensure lightweight processing and downstream scalability, we explicitly avoid computationally heavy classical SLAM backends. Instead, we project a 2D occupancy grid (0.05\,m/pixel) by applying a height-slice to the raw mobile point cloud.
+
+\subsection{Informative Keyframe \& Object Extraction}
+To process the massive multimodal input efficiently, especially for VLM annotation, we perform intelligent keyframe selection. Each full RGB frame is embedded via DINOv3 (\texttt{vitb16}, 768-dim). A sequential cosine filter retains only frames whose similarity to the previously accepted keyframe falls below a 0.85 threshold, condensing the sequence to 660 visually distinct keyframes (a 92.4\% frame reduction) to eliminate redundancy.
+
+Each keyframe is processed by a YOLOv9 model fine-tuned on the SKU-110K dataset \cite{goldman2019dense} for dense shelf products. Because tightly-packed retail shelves generate an extreme density of bounding boxes for repetitive products, we filter the detections to extract only the highest-quality and distinct semantic signals. Specifically, we compute the Laplacian variance (sharpness) for every crop and employ a \emph{Feature-Space Strategy}: from each frame, we select the absolute sharpest crop alongside the crop exhibiting the maximum DINOv3 cosine distance to ensure maximum visual diversity. Finally, fresh produce (fruits and vegetables), which are rarely placed on traditional shelves, are extracted via a secondary pre-trained YOLOv9-COCO pass.
+
+\subsection{Semantic Map}
+\label{sec:semantic}
+To optimize VLM inference throughput and rate-limiting, these representative crops are arranged into $5 \times 5$ mosaic grid images (39 grids total). These mosaics are processed by a unified VLM (\texttt{gemini-3-flash-preview}) to extract the product's \texttt{name}, \texttt{brand}, \texttt{packaging\_type}, and \texttt{category}. The VLM is also tasked to classifies the crop as blurry or sharp. We only use the sharp crops for downstream tasks (such as localization, zone classification, and as landmarks for natural language generation) that are sensitive to classification errors. 
+
+\textbf{Object Position Refinement:} Object map positions are computed via depth-based unprojection, mapping the bounding box center through the synchronized depth map into the ARKit world coordinate frame. Specifically, given the homogeneous pixel coordinates $\tilde{\bm{u}} = [u, v, 1]^\top$ at the bounding box's \emph{median} depth $Z_c$, the map position $\bm{X}_w$ is calculated as:
+\begin{equation}
+\bm{X}_w = \bm{t}_{wc} + Z_c \bm{R}_{wc} \bm{K}^{-1} \tilde{\bm{u}}
+\end{equation}
+where $\bm{K}$ represents the camera intrinsic matrix, and $\bm{R}_{wc}$ and $\bm{t}_{wc}$ denote the camera-to-world rotation and translation, respectively.
+Because consumer depth sensors frequently suffer from noise and transparency artifacts on shelf due to quasi-static products, these raw unprojected points occasionally fall inside structural obstacles. To correct this, we implement Bresenham’s line algorithm \cite{koopman1987bresenham} along the camera line-of-sight to drag-or-pull the object by casting a ray from the camera origin through the product toward the nearest occupied pixel and free space boundary (the shelf wall). This ensures the product is snapped perfectly adjacent to the walkable space, yielding unique products that are findable and reachable.
+
+\subsection{Topology}
+\label{sec:topology}
+We construct a navigation graph via morphological skeletonization of the occupancy map~\cite{zhang1984fast}. Skeleton pixels form a pixel-level graph from which we extract junctions (pixel degree $\geq 3$). Turn points are detected using a sliding-window angular change detector (turn threshold=60\textdegree). Junctions and turns within a small threshold radius are merged via hierarchical clustering, and short dead-end spurs are pruned. Bresenham line-of-sight checks on the high-resolution occupancy grid ensure all edges are traversable. Non-traversable edges are removed. To bind semantic products to the geometric topology graph, we compute the perpendicular projection of the product coordinate onto the nearest graph edge. We dynamically insert a \emph{virtual node} at this precise projection point during pathfinding. This reduces reach distance dramatically, ensuring the extracted A* path travels deep into the correct aisle and arrives within 0.1--0.5\,m of the physical target. This also allows our system to figure out the side of aisle the product is on. 
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.85\linewidth]{figures/topology_products.png}
+\caption{GIST Semantic Topology: The skeletonization-derived graph providing walking nodes (green) and traversable edges (teal), overlaid with localized products (orange).}
+\label{fig:topology-map}
+\vspace{-2mm}
+\end{figure}
+
+\section{Downstream Human-AI Tasks}
+
+The extracted semantic topology acts as a foundational engine for multiple downstream interaction tasks. To ensure architectural simplicity and consistency, all generative reasoning tasks are powered by the same \texttt{gemini-3-flash-preview} foundation model.
+
+\subsection{Zone Classification}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.85\linewidth]{figures/zone_map.png}
+\caption{Semantic Zone Classification: Free-space pixels are assigned to 18 specific semantic zones via KD-tree voting over the localized product positions (legend displays the top 10 zones by area).}
+\label{fig:zone-map}
+\vspace{-2mm}
+\end{figure}
+
+To provide high-level semantic context, all discovered products are classified into 18 specific zones (e.g., \texttt{Lentils}, \texttt{Spices}) via a single VLM prompt analyzing the unique string metadata. A KD-Tree is constructed from all mapped product coordinates. For every free-space pixel in the occupancy map, an inverse-distance-squared weighted vote of the $k=5$ nearest products assigns a continuous semantic zone overlay to the walkable floor plan (Figure~\ref{fig:zone-map}). 
+
+This continuous overlay reveals latent spatial merchandising patterns that are not explicitly labeled. For instance, the system generated a dense clustering of heterogeneous categories near the top-left aisle region. Ground-truth verification of the raw frames confirmed this region corresponds to the store's dedicated ``Organic'' section. This demonstrates the architecture's capacity to autonomously discover emergent macro-structures from micro-level semantic distributions.
+
+\subsection{Intent-Aware Search \& Category Estimation}
+Standard keyword matching fails catastrophically on long-tail, culturally unique, and dense inventory where spelling variations and linguistic substitutions are common. To resolve this, we leverage the VLM to perform intent-aware semantic matching against our structured product map, deployed via an interactive web interface. As shown in Figure~\ref{fig:search} (Right), abstract queries like ``vegan protein'' return not just exact matches, but items categorized as \texttt{Alternative} or \texttt{Related}, accompanied by generative reasoning explaining the selection. The system explicitly predicts the encompassing semantic zone (e.g., \texttt{Lentils, beans, and pulses}). By calculating the spatial median of the largest contiguous pixel cluster for that zone on the semantic map, it routes the user to the correct general aisle rather than failing outright if a specific product is unmapped.
+
+This graceful degradation via \emph{Category Estimation} is critical because physical perception via mobile scanning inherently suffers from field-of-view (FOV) clipping (e.g., bottom-shelf items obscured by narrow aisles) and dynamic occlusions during the initial mapping phase. Furthermore, this intent-aware architecture natively supports complex, multi-goal queries. As seen in the ``biryani ingredients'' query (Figure~\ref{fig:search}, Left), the VLM effectively decomposes a prepared dish into its key distinct components---biryani spices, basmati rice, garlic paste, and ghee---and simultaneously locates or estimates the topological zones for all required items, laying the groundwork for optimized multi-stop path planning.
+
+\begin{figure}[t!]
+\centering
+\begin{subfigure}{0.48\columnwidth}
+\centering
+\includegraphics[width=\linewidth, height=7.5cm, keepaspectratio=false]{figures/biryani_ingredients.png}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\columnwidth}
+\centering
+\includegraphics[width=\linewidth, height=7.5cm, keepaspectratio=false]{figures/vegan_protein.png}
+\end{subfigure}
+\caption{Intent-aware search via the Gemini-powered web interface. \textbf{Left:} A multi-item recipe query (``biryani ingredients'') is decomposed into distinct physical targets. \textbf{Right:} An abstract query (``vegan protein'') demonstrating how the VLM infers alternative semantic categories to enable robust spatial estimation when exact physical items are occluded.}
+\label{fig:search}
+\end{figure}
+
+
+\subsection{One-Shot Text-Based Semantic Localizer}
+To close the navigation loop without external infrastructure or computationally heavy visual feature matching, we introduce a text-based semantic localizer that estimates user pose $(x, y, \theta)$ from a single smartphone image (Algorithm~\ref{alg:semantic_loc}). Capabilities like this are also crucial for autonomous systems to initially localize in quasi-static environments.
+
+Offline, we discretize the occupancy grid into 0.5m cells with 8 orientation bins (45\textdegree{} each). We perform camera FOV raycasting (utilizing 20 rays per pose) against the semantic map. The collected product metadata along each ray is converted to a text string, sorted alphabetically to ensure permutation invariance, concatenated, and encoded via DistilBERT \cite{sanh2019distilbert} into a 768-d $L_2$-normalized vector, generating the semantic map $\mathcal{M}_{text}$. We cache the expected semantic for each of the discrete poses for a faster lookup. Online, a single query image is processed via YOLOv9 to extract crops, labeled via the VLM, and embedded via DistilBERT. Cosine similarity against $\mathcal{M}_{text}$ returns the top-$k$ ranked pose hypotheses.
+
+While our current implementation operates exclusively based on semantics and yields very encouraging zero-shot results, this semantic-based feature can be naturally fused with continuous onboard sensor data (e.g., accelerometers and depth sensors) to provide the high-frequency tracking required for autonomous robotic systems to safely operate in these spaces.
+
+\begin{algorithm}[h!]
+\caption{One-Shot Text-Based Semantic Localization}
+\label{alg:semantic_loc}
+\small
+\textbf{Input:} Query RGB image $I_q$, Precomputed Pose Map $\mathcal{M}_{text}$ \\
+\textbf{Output:} Estimated Global Pose Hypothesis $H = (x, y, \theta)$
+\begin{algorithmic}[1]
+\State \textbf{Phase 1: Online Query Processing}
+\State $C_{crops} \gets \text{YOLOv9}(I_q)$ \Comment{Extract product bounding boxes}
+\State $L_{raw} \gets \text{VLM}(\text{crops}) \to \{\text{brand}, \text{category}\}$
+\State $L_{deduplicated} \gets \text{SortAlphabetically}(\text{Unique}(L_{raw}))$
+\State $E_q \gets \text{DistilBERT}(L_{deduplicated})$ \Comment{text embedding}
+\State \textbf{Phase 2: Semantic Matching}
+\State $\mathcal{S} \gets \emptyset$
+\For{each free-space pose $p_i$ and precomputed embedding $E_i \in \mathcal{M}_{text}$}
+    \State $\text{score} \gets \text{CosineSimilarity}(E_q, E_i)$
+    \State $\mathcal{S} \gets \mathcal{S} \cup \{(p_i, \text{score})\}$
+\EndFor
+\State \Return $\text{argmax}_{k}(\mathcal{S})$ \Comment{Return top-$k$ ranked poses}
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Visually-Grounded Spatial Routing}
+We compute the optimal A* path across the topology graph. Path segments are logically chunked by analyzing node headings; angle changes $>30^\circ$ generate discrete turn commands, while collinear segments are merged into forward distances. 
+
+Rather than sending raw text coordinates to an LLM, GIST provides \emph{Visually-Grounded} context. The 2D occupancy map is rendered as a color image containing the topology graph, the A* path, and start/goal markers (Figure~\ref{fig:topology-map}). To provide semantic landmarks without hallucinatory visual clutter, we perform Bresenham line-of-sight rasterization. From the midpoints of the A* path, all products within a 50-pixel (2.5m) radius are tested for visibility against the occupancy grid's static obstacles. Visible products are deduplicated by category, and their relative side (left/right) is calculated via the cross-product against the path heading vector. This annotated map image, alongside the sequential route segments and validated landmarks, is passed to the VLM to generate the final egocentric routing instructions, explicitly prohibiting the use of cardinal directions.
+
+\section{Evaluation Setup}
+
+The full suite of pipeline parameters enabling exact reproducibility is detailed in Table~\ref{tab:parameters}. To comprehensively evaluate the system, we defined 15 navigation scenarios across the 3,500 sq ft store (Table~\ref{tab:scenarios}), ranging from simple to complex, multi-turn paths.
+
+\begin{table}[h]
+\centering
+\caption{Implementation \& Reproducibility Parameters}
+\label{tab:parameters}
+\small
+\begin{tabularx}{\columnwidth}{@{}lX@{}}
+\toprule
+\textbf{Component} & \textbf{Hyperparameter / Configuration} \\
+\midrule
+\textbf{Data Capture} & Consumer LiDAR Smartphone (iPhone) \\
+\textbf{RGB-D Input} & 8,668 frames, 960$\times$720 RGB, 256$\times$192 Depth \\
+\textbf{2D Map} & 0.05m/px resolution \\
+\textbf{Keyframe Filter} & DINOv3 (\texttt{vitb16-pretrain}), Cosine $\leq 0.85$ \\
+\textbf{Product Detection} & YOLOv9 (SKU-110K), conf $\geq 0.25$ \\
+\textbf{Produce Detect.} & YOLOv9 (COCO) \\
+\textbf{VLM Engine} & \texttt{gemini-3-flash-preview} (Temp: 0.3) \\
+\textbf{VLM Batching} & $5 \times 5$ representative mosaic grids \\
+\textbf{Skeletonization} & Zhang-Suen morphological thinning \\
+\textbf{Localization} & \texttt{distilbert-base-uncased} (768-d), 0.5m grid, 45$^\circ$ bins, 60$^\circ$ FOV, 6m range, 20 rays \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% \begin{table}[h]
+% \centering
+% \caption{The 15 Benchmark Navigation Scenarios used for evaluation, spanning culturally specific product categories.}
+% \label{tab:scenarios}
+% \small
+% \begin{tabular}{llcc}
+% \toprule
+% \textbf{ID} & \textbf{Target Product} & \textbf{Path Dist.} & \textbf{Turns} \\
+% \midrule
+% s01 & Laxmi Chana Dal         & 2.9m  & 0 \\
+% s09 & Swad Blackeye Peas      & 4.5m  & 0 \\
+% s10 & Mother's Recipe Pickle  & 4.7m  & 1 \\
+% s11 & Patak's Chili Pickle    & 5.0m  & 1 \\
+% s02 & Aachi Biryani Masala    & 6.5m  & 1 \\
+% s12 & Pani Puri Kit           & 6.5m  & 2 \\
+% s03 & Haldiram's Moong Dal    & 8.6m  & 1 \\
+% s13 & Parle Krackjack         & 8.6m  & 3 \\
+% s14 & Badshah Chatpat Masala  & 8.6m  & 3 \\
+% s15 & McVitie's Digestives    & 8.6m  & 3 \\
+% s04 & Badshah Pav Bhaji       & 11.2m & 0 \\
+% s05 & Swad Soya Wadi          & 13.5m & 1 \\
+% s06 & Swad Organic Urad Dal   & 14.2m & 1 \\
+% s07 & Guntur Chilli Powder    & 17.1m & 2 \\
+% s08 & Deep Aloo Paratha       & 19.4m & 2 \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
+
+\begin{table}[h]
+\centering
+\caption{The 15 Benchmark Navigation Scenarios used for evaluation, spanning culturally specific product categories.}
+\label{tab:scenarios}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}llcc | llcc@{}}
+\toprule
+\textbf{ID} & \textbf{Target Product} & \textbf{Dist.} & \textbf{Turns} & \textbf{ID} & \textbf{Target Product} & \textbf{Dist.} & \textbf{Turns} \\
+\midrule
+s01 & Laxmi Chana Dal         & 2.9m  & 0 & s14 & Badshah Chatpat Masala  & 8.6m  & 3 \\
+s09 & Swad Blackeye Peas      & 4.5m  & 0 & s15 & McVitie's Digestives    & 8.6m  & 3 \\
+s10 & Mother's Recipe Pickle  & 4.7m  & 1 & s04 & Badshah Pav Bhaji       & 11.2m & 0 \\
+s11 & Patak's Chili Pickle    & 5.0m  & 1 & s05 & Swad Soya Wadi          & 13.5m & 1 \\
+s02 & Aachi Biryani Masala    & 6.5m  & 1 & s06 & Swad Organic Urad Dal   & 14.2m & 1 \\
+s12 & Pani Puri Kit           & 6.5m  & 2 & s07 & Guntur Chilli Powder    & 17.1m & 2 \\
+s03 & Haldiram's Moong Dal    & 8.6m  & 1 & s08 & Deep Aloo Paratha       & 19.4m & 2 \\
+s13 & Parle Krackjack         & 8.6m  & 3 &     &                         &       &   \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Baseline Configurations and Prompts}
+To rigorously evaluate our generation framework, we compare GIST against explicitly prompted baselines to ensure fairness:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{NavComposer~\cite{he2025navcomposer}}: Provided with a sequence of first-person RGB trajectory frames sampled along the A* path, paired with discrete action traces (e.g., \emph{``Step 1: walk forward, Step 2: turn left''}), strictly replicating the model's native input formulation. It received no topological maps, zone labels, or metric distances.
+    \item \textbf{Naive Gemini}: Provided with a text-only prompt containing the target product name, total metric distance, store dimensions, and the allocentric cardinal direction from the start position.
+    \item \textbf{GIST (Text)}: Provided with the full array of parsed topological route segments, turn counts, total walking distance, and zone classifications, but completely deprived of the visual map image.
+    \item \textbf{GIST (Visual)}: Provided with the fully annotated topological map image (graph, A* path, start/goal markers, scale bar) and the route segments, total distance, and landmarks (category and relative side).
+\end{itemize}
+
+\section{Results and Discussion}
+
+\subsection{Semantic Localization Accuracy}
+To validate the One-Shot Semantic Localizer (Algorithm~\ref{alg:semantic_loc}), we evaluated 20 random shelf-facing frames from the mapping traversal. The true ARKit 6-DoF pose serves as ground truth.
+
+\begin{table}[h]
+\centering
+\caption{Semantic localization translation error.}
+\label{tab:localization}
+\small
+\begin{tabular}{lcc}
+\toprule
+\textbf{Metric ($k$)} & \textbf{All 20 Frames} & \textbf{Correct Zone (80\%)} \\
+\midrule
+Top-1 Error & 3.78 $\pm$ 3.76m & 2.71 $\pm$ 2.38m \\
+Top-3 Error & 2.05 $\pm$ 1.87m & 1.35 $\pm$ 0.91m \\
+Top-5 Error & \textbf{1.45 $\pm$ 1.29m} & \textbf{1.04 $\pm$ 0.80m} \\
+\bottomrule
+\end{tabular}
+\vspace{-3mm}
+\end{table}
+
+As shown in Table~\ref{tab:localization}, the localizer achieves 80\% zone-level accuracy. Among correctly-zoned frames, expanding the search to top-5 hypotheses reduces the mean error to just 1.04\,m. This demonstrates that the correct global pose is reliably recovered within the candidate set without any visual feature matching, relying entirely on the statistical distribution of textual semantics. 
+
+Qualitative analysis of some of the highest-error predictions reveals a strong phenomenon of \emph{semantic aliasing} (Figure~\ref{fig:mirrored}). Because the localizer evaluates poses based solely on the extracted product semantics, it occasionally assigns maximum confidence to ``mirrored'' or symmetric viewpoints that are distinct physical locations that share identical lines-of-sight to the target shelf. While this structural ambiguity inflates the raw Top-1 metric translation error, it actually underscores the robustness of the zero-shot semantic retrieval. The system successfully identifies the correct physical products, even if the exact viewing angle is aliased. This specific characteristic strongly motivates utilizing \emph{GIST}'s one-shot localizer as a global initialization module within a probabilistic sensor-fusion framework (e.g., a Semantic Particle Filter), where temporal odometry and depth data can rapidly resolve these symmetric ambiguities.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\columnwidth]{figures/mirror_poses_cropped.png}
+\caption{Semantic aliasing in localization. Ground Truth poses (solid) and Top-1 Predicted poses (hollow) frequently exhibit large translation errors while observing the exact same semantic targets from ``mirrored'' viewpoints.}
+\label{fig:mirrored}
+\end{figure}
+
+
+\subsection{Independent Multi-Criteria LLM Evaluation}
+Prior work \cite{zhao2021evaluation} has shown that reference-based metrics such as BLEU and ROUGE are ineffective for evaluating grounded navigation instructions, with weak alignment to human wayfinding outcomes; meanwhile, agent-centric metrics such as SPL measure success and path efficiency rather than the human-centered qualities that govern comprehension and cognitive load. Accordingly, we evaluate instruction quality on five theoretically grounded criteria using the \textit{llm-as-a-judge} paradigm \cite{gu2024survey, zheng2023judging} across all 15 scenarios: 
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Egocentric Clarity:} Ensuring body-relative directions (left/right) rather than allocentric global frames \cite{klatzky1998allocentric}.
+    \item \textbf{Landmark Utility:} Strategic use of structural, permanent semantics rather than transient visual clutter \cite{sorrows1999nature}.
+    \item \textbf{Cognitive Load:} Synthesizing instructions into concise, logically chunked memory blocks \cite{sweller1991evidence}.
+    \item \textbf{Safety \& Completeness:} Unambiguously specifying turns and defining definitive termination states \cite{loomis2001navigating}.
+    \item \textbf{Universal Design:} Creating view-independent directions that do not rely on visual pointing UIs \cite{giudice2018navigating}. 
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{figures/instruction_eval_pastel.pdf}
+\caption{Multi-Criteria Evaluation. GIST achieves high Egocentric Clarity and overall superiority.}
+\label{fig:eval_plot}
+\end{figure}
+
+As shown in Figure~\ref{fig:eval_plot}, \textbf{GIST (Visual)} achieves the highest overall score (4.43/5) with a very high Egocentric Clarity (5/5). Providing the VLM with an annotated map image entirely eliminates cardinal direction leakage. NavComposer performs poorly on Safety \& Completeness (1.80/5) because it cannot infer geometric path structure from isolated RGB frames, relying instead on transient visual clutter. As demonstrated in Table~\ref{tab:examples}, NavComposer over-indexes on visual artifacts (``shopping cart'', ``yellow wall'') which may move or be non-distinct. GIST grounds its logic in verified semantic structure (``passing Canned Goods'').
+
+\begin{table*}[t]
+\centering
+\caption{Representative instructions generated for two scenarios. NavComposer relies on sequential RGB frames, referencing transient objects, whereas GIST leverages the Semantic Topology for permanent, structural landmarks.}
+\label{tab:examples}
+\small
+\begin{tabular}{p{0.14\textwidth} p{0.42\textwidth} p{0.37\textwidth}}
+\toprule
+\textbf{Method} & \textbf{Mother's Recipe Pickle} & \textbf{Swad Blackeye Peas} \\
+\midrule
+\textbf{GIST (Visual)} & Walk straight ahead for about 3 meters and then turn left into the first aisle. Continue for 2 meters, passing the Canned Goods on your right side. The Mother's Recipe Pickle is located just ahead. & Walk straight for about 11 meters, passing the Condiments on your right after 7 meters. Turn right into the first aisle and walk 2 meters further, passing Personal Care on your left to find the Swad Blackeye Peas. \\
+\addlinespace
+\textbf{NavComposer~\cite{he2025navcomposer}} & Walk forward past the shelves of bagged lentils and beans until you reach the shopping cart. Turn left toward the yellow wall, and you will find the Mother's Recipe Pickle on the shelving unit to your right. & Walk straight ahead past the shelving unit on your left featuring religious statues and bags of Swad beans. Continue past the red crates to the end-cap display of Heinz beans and coconut milk to find the Swad Blackeye Peas. \\
+\addlinespace
+\textbf{Naive Gemini} & Walk straight ahead from the entrance for about five meters. You will find the Mother's Recipe Pickle directly in front of you. & Walk straight ahead into the store for about 4.5 meters. You will find the Swad Blackeye Peas directly in front of you. \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Difficulty \& Visual Ablation Study}
+
+As routes become longer (Table~\ref{tab:difficulty}), the Naive coordinate baseline suffers severe degradation (dropping to 2.73). In contrast, GIST maintains its instructional quality (4.59 on long routes). Because the semantic topology explicitly encodes the graph nodes and edges, the VLM can logically chunk multi-turn pathways, proving that explicit graph structures are highly resilient to spatial complexity.
+
+\begin{table}[h]
+  \centering
+  \caption{Evaluation Scores by Route Difficulty. GIST improves its performance on complex routes.}
+  \label{tab:difficulty}
+  \small
+  \begin{tabular}{@{}lccc@{}}
+  \toprule
+  \textbf{Difficulty} & \textbf{GIST} & \textbf{NavComp.} & \textbf{Naive} \\
+  \midrule
+  Short ($<5m$) & \textbf{4.31} & 3.64 & 3.27 \\
+  Medium ($<10m$) & \textbf{4.10} & 3.82 & 2.58 \\
+  Long ($>10m$)  & \textbf{4.59} & 3.75 & 2.73 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+To isolate the contribution of the visual inputs, we conducted an ablation study (Table~\ref{tab:visual-ablation}). Surprisingly, providing partial visual context—either by removing the background occupancy map (\textbf{Topology Only}, 4.55) or removing the explicit graph lines (\textbf{Map Only}, 4.49), maintained and even slightly improved the overall score compared to the full composite image (\textbf{GIST Visual}, 4.43). This suggests that reducing visual clutter aids VLM attention, provided the model receives adequate spatial grounding through either abstract path geometry or physical occupancy boundaries. However, visual structure alone is insufficient without semantic context. To demonstrate this, we evaluated \textbf{Naive Gemini + Map}, which provides the VLM with a bare occupancy map (start and goal markers only) but no topological text or product names. While the map preserves egocentric clarity, its Landmark Utility (2.89) and Safety (3.00) collapse. Ultimately, all GIST (visual) variants outperform the \textbf{Text-Only Ablation} (4.30), proving that optimally pairing explicit semantic text with lightweight visual spatial grounding yields the safest, most human-centric routing.
+
+\begin{table}[h]
+  \centering
+  \caption{Visual Ablation Study: Topology vs. Map inputs.}
+  \label{tab:visual-ablation}
+  \small
+  \begin{tabular}{@{}lcccccc@{}}
+  \toprule
+  \textbf{Condition} & \textbf{Ego} & \textbf{Land} & \textbf{CogL} & \textbf{Safe} & \textbf{Univ} & \textbf{AVG} \\
+  \midrule
+  Topo Only & \textbf{5.00} & \textbf{4.60} & 4.56 & \textbf{4.00} & \textbf{4.60} & \textbf{4.55} \\
+  Map Only & 4.87 & 4.62 & 4.33 & 3.98 & 4.64 & 4.49 \\
+  GIST (Visual) & \textbf{5.00} & 4.51 & 4.31 & 3.87 & 4.47 & 4.43 \\
+  \midrule
+  Text-Only Abl. & 4.78 & 3.78 & \textbf{4.98} & 3.07 & 4.91 & 4.30 \\
+  Naive + Map & 4.93 & 2.89 & 4.56 & 3.00 & 4.24 & 3.92 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Formative Ecological Probe}
+To validate real-world utility, we conducted a formative in-situ ecological probe ($N=5$ graduate student evaluators) in the target grocery store. Evaluators were assigned two navigation tasks sequentially, starting from the entrance. Importantly, to isolate and stress-test the efficacy of our generated spatial grounding, the application's visual path and product overlays were intentionally disabled. Evaluators relied solely on the semantic search results and generated verbal instructions. 
+
+\begin{table}[h]
+\centering
+\caption{Formative Probe Results ($N=5$). Evaluators navigated relying solely on generated verbal instructions.}
+\label{tab:user_study}
+\small
+\begin{tabular}{llcl}
+\toprule
+\textbf{Evaluator} & \textbf{Target Product} & \textbf{Time (s)} & \textbf{Outcome} \\
+\midrule
+\multirow{2}{*}{E1} & Dahi             & 75s & Success \\
+                    & Marigold Biscuit & 35s & Success \\
+\midrule
+\multirow{2}{*}{E2} & Parle G          & 47s & Success \\
+                    & Schezwan Sauce   & 32s & Success \\
+\midrule
+\multirow{2}{*}{E3} & Okra             & 26s & Success \\
+                    & Ghee             & 93s & Success (1 wrong turn) \\
+\midrule
+\multirow{2}{*}{E4} & Ragi             & N/A & Failed (FOV Clip) \\
+                    & Gud (Jaggery)    & N/A & Failed (FOV Clip) \\
+\midrule
+\multirow{2}{*}{E5} & Rajma            & 15s & Success \\
+                    & Frozen Chapatti  & 64s & Success (1 wrong turn) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Quantitative Results:} Evaluators achieved an \textbf{80\% success rate} (8/10 tasks) with an average time-to-find of 48.4 seconds for successful trials (Table~\ref{tab:user_study}), defined via self-reporting upon reaching the physical destination. Notably, the system proved resilient to real-world inventory drift; in two instances, evaluators successfully navigated to the correct semantic coordinates even when the exact physical item was out of stock or substituted with a brand-equivalent. The two failed trials stemmed from a specific mapping limitation: both target items (\textit{Ragi} and \textit{Gud}) were located on the absolute bottom shelf, falling entirely below the field of view of the chest-level mobile scan. Furthermore, because these specific items were isolated from the surrounding shelves, the \emph{Zone-Level Estimation} fallback was unable to route the user to a proxy location. Finally, the observed minor route deviations (e.g., E3, E5) occurred primarily when evaluators preemptively ignored final instructions, relying instead on their own spatial priors.
+
+\textbf{Qualitative Feedback:} Likert scale responses confirmed high subjective usability. Evaluators explicitly marked ``Agree'' or ``Strongly Agree'' that the search feature was useful, the instructions were easy to understand, and the guidance felt natural. Feedback also highlighted the nuanced challenges of egocentric routing: evaluators noted that their starting orientation directly dictates the validity of relative instructions. Despite this, the 80\% success rate achieved by relying solely on verbal cues validates the system's capacity for Universal Design (cognitive offloading without visual interfaces) and proves its viability as an engine for generating high-quality Vision-and-Language Navigation (VLN) training data.
+
+
+% \section{Conclusion}
+% GIST transforms chaotic mobile point clouds into deterministic, semantically grounded navigation topologies. By explicitly separating geometric safety from semantic reasoning, our pipeline enables zero-shot, hardware-agnostic interaction in culturally dense, quasi-static environments like warehouses, libraries, hospitals, and retail stores. Through visually-grounded routing, visual ablation, and ecological evaluation, we prove explicit topological structures outperform raw RGB sequence methods for spatial grounding. These capabilities unlock resilient global localization and robust semantic estimation for both human accessibility and automated Embodied AI tracking, proving highly generalizable to broader environments.
+
+\section{Discussion \& Limitations}
+
+Deployment in real-world, quasi-static environments reveals boundary conditions that motivate future work.
+
+\textbf{Perception and FOV Limitations:} As observed during our formative probe, physical mobile scanning inherently suffers from field-of-view clipping. Items placed on extreme bottom or top shelves were occluded from the chest-level trajectory, causing localized search failures. While our \emph{Zone-Level Estimation} gracefully mitigates this by routing users to likely locations, this highlights the need for continuous, crowdsourced map updating or active-scanning protocols where users are prompted to pan their devices in unmapped regions.
+
+\textbf{Semantic Aliasing in Localization:} Our one-shot localizer leverages pure text-embeddings to achieve highly accurate zone-level predictions. However, as demonstrated in Figure~\ref{fig:mirrored}, identical semantic arrangements viewed from symmetric or mirrored aisles induce perceptual aliasing, occasionally inflating exact metric translation errors. This specific limitation strongly positions GIST's one-shot localizer not as a standalone tracker, but as a powerful global initialization module. By fusing these semantic pose estimates via a Semantic Particle Filter, autonomous systems can achieve the tracking required for safe operation in uninstrumented spaces.
+
+\textbf{Evaluation Scope:} Finally, while the \textit{llm-as-a-judge} paradigm provides highly consistent, reproducible evaluations of routing syntax, and our ecological probe validated real-world task success, these methods do not capture real-time physiological cognitive load. Future work will deploy GIST in extended human-subject trials using psychophysiological metrics (e.g., eye-tracking) to definitively quantify the cognitive offloading benefits for both sighted and visually impaired navigators.
+
+\section{Conclusion}
+
+Navigating and searching complex, densely packed environments poses a great spatial grounding challenge for both humans and embodied AI. To address this, we presented \emph{GIST} (Grounded Intelligent Semantic Topology), a multimodal knowledge extraction pipeline that transforms consumer-grade mobile point clouds into semantically annotated navigation topologies. By distilling the scene into a lightweight 2D occupancy map, extracting its topological layout, and overlaying a semantic layer, GIST overcomes the spatial grounding failures that plague purely visual foundation models in quasi-static environments.
+
+We demonstrated the versatility of this structured spatial knowledge across four critical downstream Human-AI interaction tasks: (1) an intent-driven \emph{Semantic Search} engine that actively infers categorical alternatives and zones when exact matches fail; (2) a one-shot \emph{Semantic Localizer} achieving a 1.04\,m top-5 mean translation error without visual feature matching; (3) a \emph{Zone Classification} module that segments the walkable floor plan into high-level semantic regions; and (4) a \emph{Visually-Grounded Instruction Generator} that synthesizes optimal paths into egocentric, landmark-rich natural language routing. 
+
+Through independent multi-criteria LLM evaluation, we demonstrated that explicit topological grounding achieves perfect egocentric clarity, significantly outperforming vision-language baselines (e.g., NavComposer) that hallucinate transient landmarks. Furthermore, our in-situ formative evaluation yielded an 80\% navigation success rate relying solely on verbal cues, validating the system's capacity for universal design. Because GIST requires no external environmental infrastructure—such as Bluetooth beacons or RFID tags—it is highly generalizable to cluttered, quasi-static environments including retail stores, warehouses, libraries, and hospitals. Ultimately, GIST establishes a scalable, resilient foundation for the next generation of multimodal spatial interaction systems.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{main}
+
+\end{document}
