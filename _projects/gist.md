@@ -2,7 +2,7 @@
 layout: page
 title: GIST - Multimodal Knowledge Extraction and Spatial Grounding
 date: 2026-04-15
-description: Coming to arXiv in a week
+description: 2026 - In Submission (arXiv coming by end of April)
 img: assets/img/paper/gist/zone_map.png
 importance: 1
 category: work
