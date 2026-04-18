@@ -33,11 +33,13 @@ My thesis aims to bridge this gap by interpreting and utilizing implicit environ
 
 * **Explainable Robotic Coaching (HRI):** A framework for a robot to infer a human partner's likely mental model by observing suboptimal actions to provide targeted coaching with justifications **(HRI '19 Best Paper Runner-up)**. [Project page](https://shivendraagrawal.github.io/projects/explainable_ai/)
 
-* **Designing Embodied AI for Social Context (IROS):** A perceptive robotic cane that used models from psychology to identify socially appropriate seating locations (optimizing for privacy and intimacy), deploying all perception locally on the edge. [Project page](https://shivendraagrawal.github.io/projects/social_guidance/)
+* **Designing Embodied AI for Social Context (IROS):** A perceptive robotic cane that used models from psychology to identify socially appropriate seating locations (optimizing for privacy and intimacy). [Project page](https://shivendraagrawal.github.io/projects/social_guidance/)
 
-* **Learning Decision-Making Policies from Human Behavior (AAMAS):** My “ShelfHelp” system learned an optimal guidance policy from human behavioral data to provide grasping guidance (featured in national media). [Project page](https://shivendraagrawal.github.io/projects/shelfhelp/) 
+* **Learning Decision-Making Policies from Human Behavior (AAMAS):** Learning an optimal guidance policy from human behavioral data to provide grasping guidance (featured in national media). [Project page](https://shivendraagrawal.github.io/projects/shelfhelp/) 
 
-* **Robust Semantic Localization (RA-L):** Traditional methods falter in geometrically ambiguous (like retail aisles) environments. “ShelfAware” leverages semantic features within a probabilistic framework to handle quasi-static changes. It performs global localization using onboard RGB-D/VIO sensors. [Project page](https://shivendraagrawal.github.io/projects/shelfmcl/) 
+* **Robust Semantic Localization (RA-L):** A Semantic Particle Filter leveraging RGB-D and Visual-Inertial Odometry (VIO) to achieve state-of-the-art global localization accuracy in quasi-static, cluttered environments without external infrastructure. [Project page](https://shivendraagrawal.github.io/projects/shelfmcl/) 
+
+* **Multimodal Knowledge Extraction and Spatial Grounding (In Submission):** A multimodal pipeline that transforms mobile LiDAR scans into a lightweight semantic topology, enhancing spatial grounding for VLMs and enabling intent-aware search, one-shot global localization, and visually grounded language-based navigation. [Project page](https://shivendraagrawal.github.io/projects/gist/) 
 
 
 **News 2026:**
