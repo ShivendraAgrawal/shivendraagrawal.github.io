@@ -1,7 +1,7 @@
 ---
 layout: page
 title: An Explainable Reinforcement Learning Approach for Enabling Robots to Coach Humans
-description: Best Technical Paper Runner-up @ Human-Robot Interaction conference 2019
+description: Best Technical Paper Runner-up @ HRI 2019
 img: assets/img/blog/RARE/fig_user_study1.jpg
 # redirect: https://unsplash.com
 importance: 2

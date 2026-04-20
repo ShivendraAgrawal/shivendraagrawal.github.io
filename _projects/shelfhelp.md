@@ -2,7 +2,7 @@
 layout: page
 title: ShelfHelp - An assitive robotic system to support grocery shopping for BVI
 date: 2022-05-20
-description: 2023 - Published paper at AAMAS 23
+description: 2023 - Published paper @ AAMAS 23
 img: assets/img/paper/shelfhelp/demo.gif
 # img: https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcHgxMzgyNjcyLWltYWdlLWt3eXFrZHR5LmpwZw.jpg?s=5i_WsjSiGsjd3dh0cW88obuceCo8lP2eP7-3WYh62qs
 # redirect: https://unsplash.com

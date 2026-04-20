@@ -2,14 +2,20 @@
 layout: page
 title: GIST - Multimodal Knowledge Extraction and Spatial Grounding
 date: 2026-04-15
-description: 2026 - In Submission (arXiv coming by end of April)
+description: 2026 - In Submission
 img: assets/img/paper/gist/zone_map.png
 importance: 1
 category: work
 ---
 
-Team members:
-Shivendra Agrawal, Bradley Hayes
+    Team members:
+    Shivendra Agrawal, Bradley Hayes
+
+<br /><br />
+**Paper**
+<div class="publications">
+{% bibliography -f papers -q @*[topic=gist]* %}
+</div>
 
 <div class="row justify-content-center">
     <div class="col-sm-12 mt-3 mt-md-0">

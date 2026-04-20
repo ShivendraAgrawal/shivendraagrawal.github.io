@@ -2,7 +2,7 @@
 layout: page
 date: 2021-05-20
 title: Smart cane to find socially preferred seats
-description: 2021-2022 - Published paper at IROS 2022
+description: 2021-2022 - Published paper @ IROS 22
 img: assets/img/demo_smartcane.jpeg
 # redirect: https://unsplash.com
 importance: 1

@@ -2,7 +2,7 @@
 layout: page
 title: ShelfAware - Real-Time Semantic Localization in Quasi-Static Environments
 date: 2025-05-20
-description: 2025 - RA-L
+description: 2025 - published journal @ RA-L
 img: assets/img/paper/shelfmcl/husky.gif
 # img: https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcHgxMzgyNjcyLWltYWdlLWt3eXFrZHR5LmpwZw.jpg?s=5i_WsjSiGsjd3dh0cW88obuceCo8lP2eP7-3WYh62qs
 # redirect: https://unsplash.com
