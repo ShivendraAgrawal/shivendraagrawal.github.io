@@ -17,7 +17,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-**About myself:** Ph.D. Candidate in Computer Science developing context-aware human-centered AI for real-world robotics. My research bridges Robotics, HRI, and Embodied AI to create context-aware systems that interpret semantic, social, and geometric cues. Technical expertise spans computer vision deployment, full-stack system architecture, and human-subject evaluation, leveraging modern techniques from probabilistic planning to Foundation Models (VLMs) for deployable embodied AI. Proven track record of publishing in top-tier venues (RA-L, HRI, AAMAS, IROS). Award-winning educator and dedicated mentor, recognized for instructional excellence with multiple Outstanding TA and Instructor awards.
+**About myself:** Ph.D. Candidate in Computer Science developing context-aware human-centered AI for real-world robotics. My research bridges Robotics, HRI, and Embodied AI to create context-aware systems that interpret semantic, social, and geometric cues. Technical expertise spans computer vision deployment, full-stack system architecture, leveraging modern techniques from probabilistic planning to Foundation Models (VLMs) for deployable embodied AI. Proven track record of publishing in top-tier venues (RA-L, HRI, AAMAS, IROS). Award-winning educator and mentor, recognized for instructional excellence with multiple Outstanding TA and Instructor awards.
 
 <!-- ***I am on the job market for a faculty position starting Fall 2026.*** -->
 
@@ -31,15 +31,48 @@ My thesis aims to bridge this gap by interpreting and utilizing implicit environ
 
 **Summary of some of my work:** 
 
-* **Explainable Robotic Coaching (HRI):** A framework for a robot to infer a human partner's likely mental model by observing suboptimal actions to provide targeted coaching with justifications **(HRI '19 Best Paper Runner-up)**. [Project page](https://shivendraagrawal.github.io/projects/explainable_ai/)
-
-* **Designing Embodied AI for Social Context (IROS):** A perceptive robotic cane that used models from psychology to identify socially appropriate seating locations (optimizing for privacy and intimacy). [Project page](https://shivendraagrawal.github.io/projects/social_guidance/)
-
-* **Learning Decision-Making Policies from Human Behavior (AAMAS):** Learning an optimal guidance policy from human behavioral data to provide grasping guidance (featured in national media). [Project page](https://shivendraagrawal.github.io/projects/shelfhelp/) 
-
-* **Robust Semantic Localization (RA-L):** A Semantic Particle Filter leveraging RGB-D and Visual-Inertial Odometry (VIO) to achieve state-of-the-art global localization accuracy in quasi-static, cluttered environments without external infrastructure. [Project page](https://shivendraagrawal.github.io/projects/shelfmcl/) 
-
-* **Multimodal Knowledge Extraction and Spatial Grounding (In Submission):** A multimodal pipeline that transforms mobile LiDAR scans into a lightweight semantic topology, enhancing spatial grounding for VLMs and enabling intent-aware search, one-shot global localization, and visually grounded language-based navigation. [Project page](https://shivendraagrawal.github.io/projects/gist/) 
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-sm-2 mt-2 mt-md-0">
+            {% include figure.liquid path="assets/img/paper/gist/zone_map.png" class="img-fluid rounded z-depth-1" %}
+        </div>
+        <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
+            <p><strong>Multimodal Knowledge Extraction and Spatial Grounding (In Submission):</strong> A multimodal pipeline that transforms mobile LiDAR scans into a lightweight semantic topology, enhancing spatial grounding for VLMs and enabling intent-aware search, one-shot global localization, and visually grounded language-based navigation. <a href="https://shivendraagrawal.github.io/projects/gist/">Project page</a></p>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-sm-2 mt-2 mt-md-0">
+            {% include figure.liquid path="assets/img/paper/shelfmcl/husky.gif" class="img-fluid rounded z-depth-1" %}
+        </div>
+        <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
+            <p><strong>Robust Semantic Localization (RA-L):</strong> A Semantic Particle Filter leveraging RGB-D and Visual-Inertial Odometry (VIO) to achieve state-of-the-art global localization accuracy in quasi-static, cluttered environments without external infrastructure. <a href="https://shivendraagrawal.github.io/projects/shelfmcl/">Project page</a></p>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-sm-2 mt-2 mt-md-0">
+            {% include figure.liquid path="assets/img/paper/shelfhelp/demo.gif" class="img-fluid rounded z-depth-1" %}
+        </div>
+        <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
+            <p><strong>Learning Decision-Making Policies from Human Behavior (AAMAS):</strong> Learning an optimal guidance policy from human behavioral data to provide grasping guidance (featured in national media). <a href="https://shivendraagrawal.github.io/projects/shelfhelp/">Project page</a></p>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-sm-2 mt-2 mt-md-0">
+            {% include figure.liquid path="assets/img/demo_smartcane.jpeg" class="img-fluid rounded z-depth-1" %}
+        </div>
+        <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
+            <p><strong>Designing Embodied AI for Social Context (IROS):</strong> A perceptive robotic cane that used models from psychology to identify socially appropriate seating locations (optimizing for privacy and intimacy). <a href="https://shivendraagrawal.github.io/projects/social_guidance/">Project page</a></p>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-sm-2 mt-2 mt-md-0">
+            {% include figure.liquid path="assets/img/blog/RARE/fig_user_study1.jpg" class="img-fluid rounded z-depth-1" %}
+        </div>
+        <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
+            <p><strong>Explainable Robotic Coaching (HRI):</strong> A framework for a robot to infer a human partner's likely mental model by observing suboptimal actions to provide targeted coaching with justifications <strong>(HRI '19 Best Paper Runner-up)</strong>. <a href="https://shivendraagrawal.github.io/projects/explainable_ai/">Project page</a></p>
+        </div>
+    </div>
+</div>
 
 
 **News 2026:**
