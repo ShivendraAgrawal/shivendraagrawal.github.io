@@ -122,11 +122,16 @@ We evaluated ShelfAware in a semantically dense retail environment (a mock store
 </div>
 
 ```bibtex
-@article{agrawal2025shelfaware,
-  title={ShelfAware: Real-Time Visual-Inertial Semantic Localization in Quasi-Static Environments with Low-Cost Sensors},
+@ARTICLE{11478317,
   author={Agrawal, Shivendra and Brawer, Jake and Naik, Ashutosh and Roncone, Alessandro and Hayes, Bradley},
-  journal={arXiv preprint arXiv:2512.09065},
-  year={2025}
+  journal={IEEE Robotics and Automation Letters}, 
+  title={ShelfAware: Real-Time Visual-Inertial Semantic Localization in Quasi-Static Environments With Low-Cost Sensors}, 
+  year={2026},
+  volume={11},
+  number={6},
+  pages={6943-6950},
+  keywords={Filtering;Particle filters;Filters;Circuits and systems;Central Processing Unit;Circuits;Feedback;MIMICs;Millimeter wave integrated circuits;Monolithic integrated circuits;Localization;semantic scene understanding;SLAM},
+  doi={10.1109/LRA.2026.3682613}
 }
 ```
 
