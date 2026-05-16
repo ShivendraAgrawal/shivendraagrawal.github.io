@@ -1349,10 +1349,10 @@ ninja-keys::part(ninja-input-wrapper) {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  border: 1px solid #ddd;
+  border: 1px solid var(--global-divider-color);
   border-radius: 12px;
   overflow: hidden;
-  background: #fff;
+  background: var(--global-card-bg-color);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1369,9 +1369,13 @@ ninja-keys::part(ninja-input-wrapper) {
 
 .press-text {
   padding: 0.75rem 1rem;
-  color: #333;
+  color: var(--global-text-color);
   font-size: 0.95rem;
   line-height: 1.4;
+}
+
+.press-text strong {
+  color: var(--global-text-color);
 }
 
 /* Wrapper: half width, left-aligned, shrink-wrap */
