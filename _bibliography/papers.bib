@@ -1,6 +1,32 @@
 ---
 ---
 
+@article{agrawal2026vlmgloc,
+  abbr={ArXiv},
+  title={VLM-GLoc: Vision-Language Model Enhanced Monte Carlo Localization for Robust Semantic Global Localization in Cluttered Quasi-Static Environments},
+  author={Agrawal, Shivendra and Hayes, Bradley},
+  journal={arXiv preprint arXiv:2605.30506},
+  year={2026},
+  topic={vlmgloc},
+  pdf={https://arxiv.org/pdf/2605.30506.pdf},
+  url={https://arxiv.org/abs/2605.30506},
+  bibtex_show={true},
+  abstract={Global localization in geometrically aliased, quasi-static environments such as grocery stores, offices, schools, and hospitals poses a significant challenge for mobile robots. Grocery stores with parallel aisles and a long tailed distribution of products, as well as offices and labs with repetitive furniture such as chairs, desks, monitors, and doors, exemplify common indoor environments that present geometric and even semantic ambiguity. Traditional approaches rely either on distinct geometric features or on domain-specific vision pipelines that struggle with long-tail semantic distributions and transient visual clutter. We present VLM-GLoc, a method for hierarchical semantic Monte Carlo Localization (MCL) that leverages open-vocabulary Vision-Language Models (VLMs) as a unified semantic observation front-end. We hypothesize a three-fold benefit from VLMs: (1) extracting highly discriminative rich text features, (2) implicit quality filtering of blurry or dynamic objects, and (3) permanence reasoning for targeted data augmentation. We introduce an inverse semantic proposal mechanism that seeds particles via text-to-map retrieval. Evaluated across two real-world environments with different characteristics and two different platforms: a 3,500 sq. ft. grocery store with a cellphone and a 3,700 sq. ft. lab space with a quadruped, VLM-GLoc achieves 70% and 74% global localization success respectively, substantially outperforming traditional geometry-only and domain-specific baselines.}
+}
+
+@article{agrawal2026gist,
+  abbr={ArXiv},
+  title={GIST - Multimodal Knowledge Extraction and Spatial Grounding},
+  author={Agrawal, Shivendra and Hayes, Bradley},
+  journal={arXiv preprint arXiv:2604.15495},
+  year={2026},
+  topic={gist},
+  pdf={https://arxiv.org/pdf/2604.15495},
+  url={https://arxiv.org/abs/2604.15495},
+  bibtex_show={true},
+  abstract={Navigating complex, densely packed environments like retail stores, warehouses, and hospitals poses a significant spatial grounding challenge for humans and embodied AI. In these spaces, dense visual features quickly become stale given the quasi-static nature of items, and long-tail semantic distributions challenge traditional computer vision. While Vision-Language Models (VLMs) help assistive systems navigate semantically-rich spaces, they still struggle with spatial grounding in cluttered environments. We present GIST (Grounded Intelligent Semantic Topology), a multimodal knowledge extraction pipeline that transforms a consumer-grade mobile point cloud into a semantically annotated navigation topology. Our architecture distills the scene into a 2D occupancy map, extracts its topological layout, and overlays a lightweight semantic layer via intelligent keyframe and semantic selection. We demonstrate the versatility of this structured spatial knowledge through critical downstream Human-AI interaction tasks: (1) an intent-driven Semantic Search engine that actively infers categorical alternatives and zones when exact matches fail; (2) a one-shot Semantic Localizer achieving a 1.04 m top-5 mean translation error; (3) a Zone Classification module that segments the walkable floor plan into high-level semantic regions; and (4) a Visually-Grounded Instruction Generator that synthesizes egocentric, landmark-rich natural language routing. In multi-criteria LLM evaluations, GIST outperforms sequence-based instruction generation baselines. Finally, an in-situ formative evaluation (N=5) yields an 80% navigation success rate relying solely on verbal cues, validating the system's capacity for universal design.}
+}
+
 @ARTICLE{11478317,
   abbr={RA-L},
   author={Agrawal, Shivendra and Brawer, Jake and Naik, Ashutosh and Roncone, Alessandro and Hayes, Bradley},
@@ -17,6 +43,7 @@
   url={https://arxiv.org/abs/2512.09065},
   bibtex_show={true}
 }
+
 @inproceedings{agrawal2026distributional,
   abbr={ICRA},
   title={Distributional Semantics for Robust Global Localization in Cluttered, Geometrically Aliased Environments},
@@ -30,9 +57,8 @@
   abstract={Many indoor workspaces such as warehouses, laboratories, and retail spaces are quasi-static: their global geometric layout remains permanent, but local semantics change continually. These spaces often have repetitive geometry, dynamic clutter, and perceptual noise that makes standard vision-based localization brittle. We present Distributional Semantic Monte Carlo Localization (DS-MCL), a particle filter for robust global localization that treats scene semantics as statistical evidence over object categories rather than fixed-quantity landmarks. DS-MCL fuses a geometric depth likelihood with a category-centric semantic similarity, utilizing a precomputed bank of semantic viewpoints to perform inverse semantic proposals for fast, targeted hypothesis generation on low-cost hardware. We evaluate DS-MCL across two environments. In a rigorously controlled quasi-static environment, DS-MCL achieves a 97% global localization success rate, heavily outperforming geometric and fixed-semantic baselines. Furthermore, in a 3,500 sq. ft. operational retail store, leveraging an open-vocabulary vision pipeline, DS-MCL significantly outperforms fixed-quantity baselines (62% vs 42% success). By modeling semantics distributionally, DS-MCL resolves geometric aliasing and provides an infrastructure-free building block for reliable autonomy in dynamic real-world environments.}
 }
 
-
 @inproceedings{agrawal2022shelfhelp,
-abbr={AAMAS},
+  abbr={AAMAS},
   title={ShelfHelp: Empowering Humans to Perform Vision-Independent Manipulation Tasks with a Socially Assistive Robotic Cane},
   author={Agrawal, Shivendra and Nayak, Suresh and Naik, Ashutosh and Hayes, Bradley},
   booktitle={Proceedings of the 2023 International Conference on Autonomous Agents and Multiagent Systems},
@@ -45,12 +71,11 @@ abbr={AAMAS},
   year={2023},
   bibtex_show={true},
   abstract={The ability to shop independently, especially in grocery stores, is important for maintaining a high quality of life. This can be particularly challenging for people with visual impairments (PVI). Stores carry thousands of products, with approximately 30,000 new products introduced each year in the US market alone, presenting a challenge even for modern computer vision solutions. Through this work, we present a proof-of-concept socially assistive robotic system we call ShelfHelp, and propose novel technical solutions for enhancing instrumented canes traditionally meant for navigation tasks with additional capability within the domain of shopping. 
-ShelfHelp includes a novel visual product locator algorithm designed for use in grocery stores and a novel planner that autonomously issues verbal manipulation guidance commands to guide the user during product retrieval. Through a human subjects study, we show the system's success in locating and providing effective manipulation guidance to retrieve desired products with novice users. We compare two autonomous verbal guidance modes achieving comparable performance to a human assistance baseline and present encouraging findings that validate our system's efficiency and effectiveness and through positive subjective metrics including competence, intelligence, and ease of use.}
+  ShelfHelp includes a novel visual product locator algorithm designed for use in grocery stores and a novel planner that autonomously issues verbal manipulation guidance commands to guide the user during product retrieval. Through a human subjects study, we show the system's success in locating and providing effective manipulation guidance to retrieve desired products with novice users. We compare two autonomous verbal guidance modes achieving comparable performance to a human assistance baseline and present encouraging findings that validate our system's efficiency and effectiveness and through positive subjective metrics including competence, intelligence, and ease of use.}
 }
 
-
 @inproceedings{agrawal2022shelf,
-abbr={IROS},
+  abbr={IROS},
   title={ShelfHelp: Empowering Humans to Perform Vision-Independent Manipulation Tasks with a Socially Assistive Robotic Cane},
   author={Agrawal, Shivendra and Hayes, Bradley},
   booktitle={IROS 2022 SCIAR Workshop},
@@ -61,7 +86,7 @@ abbr={IROS},
   year={2022},
   bibtex_show={true},
   abstract={The ability to shop independently, especially in grocery stores, is important for maintaining a high quality of life. This can be particularly challenging for people with visual impairments (PVI). Stores carry thousands of products, with approximately 30,000 new products introduced each year in the US market alone, presenting a challenge even for modern computer vision solutions. In this work we present our work-in-progress investigating technical solutions for enhancing instrumented canes traditionally meant for navigation tasks with capability within the domain of shopping.
-Our system includes a novel visual product search algorithm designed for use in the wild and a novel planner that autonomously issues verbal commands to guide the user in a reaching task to acquire them.}
+  Our system includes a novel visual product search algorithm designed for use in the wild and a novel planner that autonomously issues verbal commands to guide the user in a reaching task to acquire them.}
 }
 
 @inproceedings{agrawal2022novel,
@@ -77,10 +102,9 @@ Our system includes a novel visual product search algorithm designed for use in 
   bibtex_show={true},
   website={https://shivendraagrawal.github.io/projects/social_guidance/},
   abstract={Goal-based navigation in public places is critical for independent mobility and for breaking barriers that exist for blind or visually impaired (BVI) people in a sight-centric society. Through this work we present a proof-of-concept system that autonomously leverages goal-based navigation assistance and perception to identify socially preferred seats and safely guide its user towards them
-in unknown indoor environments. The robotic system includes a camera, an IMU, vibrational motors, and a white cane, powered via a backpack-mounted laptop. The system combines techniques from computer vision, robotics, and motion planning with insights from psychology to perform 1) SLAM and object localization, 2) goal disambiguation and scoring, and 3) path planning and guidance. We introduce a novel 2-motor haptic feedback system on the cane’s grip for navigation assistance. Through a pilot user study, we show that the system is successful in classifying and providing haptic navigation guidance to socially preferred seats, while
-optimizing for users convenience, privacy, and intimacy in addition to increasing their confidence in independent navigation. The implications are encouraging as this technology, with careful design guided by the BVI community, can be adopted and further developed to be used with medical devices enabling the BVI population to better independently engage in socially dynamic situations like seat choice.}
+  in unknown indoor environments. The robotic system includes a camera, an IMU, vibrational motors, and a white cane, powered via a backpack-mounted laptop. The system combines techniques from computer vision, robotics, and motion planning with insights from psychology to perform 1) SLAM and object localization, 2) goal disambiguation and scoring, and 3) path planning and guidance. We introduce a novel 2-motor haptic feedback system on the cane’s grip for navigation assistance. Through a pilot user study, we show that the system is successful in classifying and providing haptic navigation guidance to socially preferred seats, while
+  optimizing for users convenience, privacy, and intimacy in addition to increasing their confidence in independent navigation. The implications are encouraging as this technology, with careful design guided by the BVI community, can be adopted and further developed to be used with medical devices enabling the BVI population to better independently engage in socially dynamic situations like seat choice.}
 }
-
 
 @inproceedings{tabrez2019explanation,
   abbr={HRI},
@@ -98,29 +122,4 @@ optimizing for users convenience, privacy, and intimacy in addition to increasin
   bibtex_show={true},
   award={Best Paper Runner-up},
   abstract={For robots to effectively collaborate with humans, it is critical to establish a shared mental model amongst teammates. In the case of incongruous models, catastrophic failures may occur unless mitigating steps are taken. To identify and remedy these potential issues, we propose a novel mechanism for enabling an autonomous system to detect model disparity between itself and a human collaborator, infer the source of the disagreement within the model, evaluate potential consequences of this error, and finally, provide human-interpretable feedback to encourage model correction. This process effectively enables a robot to provide a human with a policy update based on perceived model disparity, reducing the likelihood of costly or dangerous failures during joint task execution. This paper makes two contributions at the intersection of explainable AI (xAI) and human-robot collaboration: 1) The Reward Augmentation and Repair through Explanation (RARE) framework for estimating task understanding and 2) A human subjects study illustrating the effectiveness of reward augmentation-based policy repair in a complex collaborative task.}
-}
-
-@article{agrawal2026gist,
-  abbr={ArXiv},
-  title={GIST - Multimodal Knowledge Extraction and Spatial Grounding},
-  author={Agrawal, Shivendra and Hayes, Bradley},
-  journal={arXiv preprint arXiv:2604.15495},
-  year={2026},
-  topic={gist},
-  pdf={https://arxiv.org/pdf/2604.15495},
-  url={https://arxiv.org/abs/2604.15495},
-  bibtex_show={true}
-}
-
-@article{agrawal2026vlmgloc,
-  abbr={ArXiv},
-  title={VLM-GLoc: Vision-Language Model Enhanced Monte Carlo Localization for Robust Semantic Global Localization in Cluttered Quasi-Static Environments},
-  author={Agrawal, Shivendra and Hayes, Bradley},
-  journal={arXiv preprint arXiv:2605.30506},
-  year={2026},
-  topic={vlmgloc},
-  pdf={https://arxiv.org/pdf/2605.30506.pdf},
-  url={https://arxiv.org/abs/2605.30506},
-  bibtex_show={true},
-  abstract={Global localization in geometrically aliased, quasi-static environments such as grocery stores, offices, schools, and hospitals poses a significant challenge for mobile robots. Grocery stores with parallel aisles and a long tailed distribution of products, as well as offices and labs with repetitive furniture such as chairs, desks, monitors, and doors, exemplify common indoor environments that present geometric and even semantic ambiguity. Traditional approaches rely either on distinct geometric features or on domain-specific vision pipelines that struggle with long-tail semantic distributions and transient visual clutter. We present VLM-GLoc, a method for hierarchical semantic Monte Carlo Localization (MCL) that leverages open-vocabulary Vision-Language Models (VLMs) as a unified semantic observation front-end. We hypothesize a three-fold benefit from VLMs: (1) extracting highly discriminative rich text features, (2) implicit quality filtering of blurry or dynamic objects, and (3) permanence reasoning for targeted data augmentation. We introduce an inverse semantic proposal mechanism that seeds particles via text-to-map retrieval. Evaluated across two real-world environments with different characteristics and two different platforms: a 3,500 sq. ft. grocery store with a cellphone and a 3,700 sq. ft. lab space with a quadruped, VLM-GLoc achieves 70% and 74% global localization success respectively, substantially outperforming traditional geometry-only and domain-specific baselines.}
 }
