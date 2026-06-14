@@ -12,7 +12,7 @@ profile:
     <p>University of Colorado</p>
     <p>Boulder, Colorado</p>
 
-news: false # includes a list of news items
+news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
@@ -29,17 +29,7 @@ social: true # includes social icons at the bottom of the page
 <!-- **Research Abstract:** Real-world environments are riddled with highly unstructured scenes, challenging lighting conditions, unpredictable dynamic agents, unmodeled dynamics, and variable conditions, making is hard for most research to translate to real-world setting.
 My thesis aims to bridge this gap by interpreting and utilizing implicit environmental context in the form of semantic and social cues. Through studies demonstrating socially preferred goal-seeking navigation guidance, precise manipulation for grasping in dense, cluttered scenes, and localization leveraging semantic environmental understanding, we establish foundational methods for generating context-aware assistance and lay critical groundwork for the future development of practical, scalable assistive robotic systems. -->
 
-**News 2026:**
 
-* (May 2026) [Workshop Paper Accepted at ICRA 2026 SRRA!](https://openreview.net/forum?id=FjjDqommMK)
-* (Apr 2026) [RA-L Paper Accepted!](https://shivendraagrawal.github.io/projects/shelfmcl/)
-* (Mar 2026) [Won the Dissertation Completion Fellowship 2026](https://shivendraagrawal.github.io/)
-* (Feb 2026) [Guest lecture on Hidden Markov Models in the Intro to AI class at CU Boulder](https://drive.google.com/file/d/1ldNL-rF6MjZzjDeaS-m7PZb5l5NWx9zG/view?usp=sharing)
-* (Feb 2026) [Awarded Best Poster at the Annual Research Expo 2026 CU Boulder](https://www.linkedin.com/posts/department-of-computer-science-university-of-colorado_cuboulder-csresearch-researchexpo-activity-7427755388349075457-4lk4?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAg06zIB0-leJnAXWLF6-DZ2KHWMSxjEtT4)
-* (Jan 2026) Invited research talk at Fairfield University
-* (Jan 2026) [Selected as the Next Gen Cohort for CERAWeek 2026](https://www.ceraweek.com/en/partner-programs/nextgen) (Could not attend due to unavoidable circumstances)
-
-<br>
 
 **Summary of some of my work:** 
 

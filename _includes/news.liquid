@@ -9,6 +9,17 @@
     >
       <table class="table table-sm table-borderless">
         {% assign news = site.news | reverse %}
+        {% if include.year_from %}
+          {% assign filtered_news = "" | split: "" %}
+          {% for item in news %}
+            {% assign item_year = item.date | date: '%Y' | plus: 0 %}
+            {% if item_year >= include.year_from %}
+              {% assign filtered_news = filtered_news | push: item %}
+            {% endif %}
+          {% endfor %}
+          {% assign news = filtered_news %}
+        {% endif %}
+        {% assign news_size = news | size %}
         {% if include.limit and site.announcements.limit %}
           {% assign news_limit = site.announcements.limit %}
         {% else %}
