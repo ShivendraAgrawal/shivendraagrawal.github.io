@@ -20,15 +20,17 @@
           {% assign news = filtered_news %}
         {% endif %}
         {% assign news_size = news | size %}
-        {% if include.limit and site.announcements.limit %}
+        {% if include.year_from %}
+          {% assign news_limit = news_size %}
+        {% elsif include.limit and site.announcements.limit %}
           {% assign news_limit = site.announcements.limit %}
         {% else %}
           {% assign news_limit = news_size %}
         {% endif %}
         {% for item in news limit: news_limit %}
-          <tr>
-            <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
-            <td>
+          <tr style="padding: 0; line-height: 1.3">
+            <th scope="row" style="width: 20%; padding: 1px 4px 1px 0; font-weight: normal; white-space: nowrap">{{ item.date | date: '%b %Y' }}</th>
+            <td style="padding: 1px 0">
               {% if item.inline %}
                 {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
               {% else %}
