@@ -6,6 +6,15 @@ description:
 nav: true
 nav_order: 8
 ---
+## Thesis Defense
+
+*   **Foundations for Context-Aware Assistive Guidance: Integrating Implicit Semantic, Social, and Physical Cues**  
+    *Ph.D. Thesis Defense, University of Colorado Boulder*  
+    July 10, 2026  
+    [[Recording]](https://youtu.be/Mgnx6VxQcl4){:target="\_blank"}
+
+---
+
 ## Invited Talks & Guest Lectures
 
 *   **Hidden Markov Models in Intro to AI**  
