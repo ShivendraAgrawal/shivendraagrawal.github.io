@@ -17,7 +17,9 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-**About myself:** Ph.D. Candidate in Computer Science developing context-aware human-centered AI for real-world robotics. My research bridges Robotics, HRI, and Embodied AI to create context-aware systems that interpret semantic, social, and geometric cues. Technical expertise spans computer vision deployment, full-stack system architecture, leveraging modern techniques from probabilistic planning to Foundation Models (VLMs) for deployable embodied AI. Proven track record of publishing in top-tier venues (RA-L, HRI, AAMAS, IROS, ICRA). Award-winning educator and mentor, recognized for instructional excellence with multiple Outstanding TA and Instructor awards.
+**About myself:** CS Ph.D. (CU Boulder '26) developing deployable, context-aware robotics and human-centered AI at the intersection of Robotics, HRI, and Vision-Language Models. Proven track record of top-tier publications (RA-L, IROS, HRI, AAMAS, ICRA) and award-winning instructional excellence with multiple Outstanding TA and Instructor awards.
+
+<!-- **About myself:** Ph.D. in CS at CU Boulder, developing context-aware human-centered AI for real-world robotics. My research bridges Robotics, HRI, and Embodied AI to create context-aware systems that interpret semantic, social, and geometric cues. Technical expertise spans computer vision deployment, full-stack system architecture, leveraging modern techniques from probabilistic planning to Foundation Models (VLMs) for deployable embodied AI. Proven track record of publishing in top-tier venues (RA-L, HRI, AAMAS, IROS, ICRA). Award-winning educator and mentor, recognized for instructional excellence with multiple Outstanding TA and Instructor awards. -->
 
 <!-- ***I am on the job market for a faculty position starting Fall 2026.*** -->
 
