@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='https://cairo-lab.com/'>CAIRO Lab @ CU Boulder</a>
+subtitle: "<a href='https://interactive-machines.com/'>Postdoc @ IMG Lab</a> | <a href='https://cairo-lab.com/'>CAIRO Lab @ CU Boulder</a>"
 
 profile:
   align: right
@@ -17,7 +17,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-**About myself:** CS Ph.D. (CU Boulder '26) developing deployable, context-aware robotics and human-centered AI at the intersection of Robotics, HRI, and Vision-Language Models. Proven track record of top-tier publications (RA-L, IROS, HRI, AAMAS, ICRA) and award-winning instructional excellence with multiple Outstanding TA and Instructor awards.
+**About myself:** Starting in September 2026, I will join [Yale University](https://www.yale.edu/) as a postdoctoral researcher in the [Interactive Machines Group](https://interactive-machines.com/), working with Prof. [Marynel Vázquez](https://www.marynel.net/). I recently completed my Ph.D. in Computer Science at CU Boulder, where I developed deployable, context-aware robotics and human-centered AI at the intersection of robotics, HRI, and vision-language models. My work has appeared at venues including RA-L, IROS, HRI, AAMAS, and ICRA, and I have received multiple Outstanding TA and Instructor awards for instructional excellence.
 
 <!-- **About myself:** Ph.D. in CS at CU Boulder, developing context-aware human-centered AI for real-world robotics. My research bridges Robotics, HRI, and Embodied AI to create context-aware systems that interpret semantic, social, and geometric cues. Technical expertise spans computer vision deployment, full-stack system architecture, leveraging modern techniques from probabilistic planning to Foundation Models (VLMs) for deployable embodied AI. Proven track record of publishing in top-tier venues (RA-L, HRI, AAMAS, IROS, ICRA). Award-winning educator and mentor, recognized for instructional excellence with multiple Outstanding TA and Instructor awards. -->
 
