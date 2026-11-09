@@ -7,6 +7,7 @@ img: assets/img/blog/RARE/fig_user_study1.jpg
 importance: 2
 date: 2020-05-20
 category: work
+threads: [coadapt]
 ---
     Team members:
     Aaquib Tabrez

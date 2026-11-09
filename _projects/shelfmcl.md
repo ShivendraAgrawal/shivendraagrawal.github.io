@@ -8,6 +8,7 @@ img: assets/img/paper/shelfmcl/husky.gif
 # redirect: https://unsplash.com
 importance: 1
 category: work
+threads: [embodied, assistive]
 ---
 
     Team members:

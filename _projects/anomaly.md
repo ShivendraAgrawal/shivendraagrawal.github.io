@@ -8,6 +8,7 @@ img: assets/img/anomaly.png
 # redirect: https://unsplash.com
 importance: 1
 category: work
+threads: [embodied]
 ---
 
     Team members:

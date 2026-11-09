@@ -1402,3 +1402,22 @@ ninja-keys::part(ninja-input-wrapper) {
   height: 100% !important;
   border: 0;
 }
+
+// Research thread tags (homepage)
+.thread-tag {
+  display: inline-block;
+  padding: 0.1em 0.6em;
+  margin: 0 0.3em 0.35em 0;
+  border-radius: 999px;
+  font-size: 0.78em;
+  font-weight: 600;
+  line-height: 1.6;
+  &.t-embodied { color: #1d5fa8; background: rgba(29, 95, 168, 0.12); }
+  &.t-assistive { color: #1e7a4a; background: rgba(30, 122, 74, 0.12); }
+  &.t-coadapt { color: #a2451b; background: rgba(162, 69, 27, 0.12); }
+}
+html[data-theme="dark"] .thread-tag {
+  &.t-embodied { color: #8cc0ff; background: rgba(140, 192, 255, 0.15); }
+  &.t-assistive { color: #7fd8a6; background: rgba(127, 216, 166, 0.15); }
+  &.t-coadapt { color: #ffab7a; background: rgba(255, 171, 122, 0.15); }
+}

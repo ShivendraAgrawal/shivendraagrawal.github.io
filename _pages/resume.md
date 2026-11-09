@@ -4,8 +4,9 @@ permalink: /resume/
 title: CV
 description: 
 nav: true
+nav_order: 3
 ---
-Last Updated: May 2026
+Last Updated: November 2026 &nbsp;&nbsp;[(Download PDF)](/assets/pdf/resume.pdf)
 
 For best viewing experience, view it on desktop or android. The pdf (3 pages) does not load completely on IOS devices.
 <!-- &nbsp;&nbsp;&nbsp;[(Downloadable link)](https://shivendraagrawal.github.io/assets/pdf/resume.pdf) -->

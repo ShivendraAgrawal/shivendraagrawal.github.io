@@ -4,13 +4,13 @@ permalink: /teaching/
 title: Teaching
 description: 
 nav: true
-nav_order: 6
+nav_order: 4
 ---
 
 ## Instructor
 * I taught the undergraduate **Algorithms CSCI 3104** class in Fall 2019 with **109** students in my section. I co-created the material with [Dr. Rhonda Hoenigman](https://experts.colorado.edu/display/fisid_152997) and together we taught more than 250 students.
 <!-- I received the highest [FCQ](https://www.colorado.edu/fcq/boulder-fcq-results) as an instructor for that class in recent times.  -->
-* I was awarded the **Best Part Time Gradute Instructor 2019-2020** for the above.
+* I was awarded the **Best Part Time Graduate Instructor 2019-2020** for the above.
 * You can find my [live handwritten lecture notes here](https://drive.google.com/drive/folders/1vRfMC7lCrVAZzo3dz8qBtgsNyankIEty?usp=sharing).
 
 ---
@@ -22,7 +22,7 @@ nav_order: 6
 2. **CSCI 3002 HCI** - *2020 Fall*
     - Led weekly recitations and office hours
     - Introduced modern mobile- and web-centric examples, aligning course content with current UI/UX practices
-3. **CSCI 3302 Intro to Robotics** - *David T. Spalding Graduate Teaching Fund Fellowship for excellence in teaching (2021-2022)*
+3. **CSCI 3302 Intro to Robotics** - *Outstanding TA award (David T. Spalding Graduate Teaching Fund Fellowship), 2021-2022*
     - Led weekly recitations and office hours
     - Designed the course final project
     - Designed simulation-based automated grading scripts, enabling the course to scale from ~40 to ~120 students

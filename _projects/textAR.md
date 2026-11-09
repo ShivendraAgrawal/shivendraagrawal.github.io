@@ -8,6 +8,7 @@ img: assets/img/blog/arkit/GIF4.gif
 # redirect: https://unsplash.com
 importance: 1
 category: work
+threads: [assistive]
 ---
 
 

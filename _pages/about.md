@@ -2,11 +2,11 @@
 layout: about
 title: About
 permalink: /
-subtitle: "<a href='https://www.yale.edu/'>Postdoc @ Yale</a>"
+subtitle: "Postdoctoral Researcher, <a href='https://www.yale.edu/'>Yale University</a>"
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic_2026.jpg
   image_circular: false # crops the image to make it circular
 
 news: true # includes a list of news items
@@ -14,23 +14,13 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-**About me:** I am a postdoctoral researcher at [Yale University](https://www.yale.edu/) in the [Interactive Machines Group](https://interactive-machines.com/), working with Prof. [Marynel Vázquez](https://www.marynel.net/). I completed my Ph.D. in Computer Science at CU Boulder with my wonderful advisor Prof. Brad Hayes, where I developed deployable, context-aware robotics and human-centered AI at the intersection of robotics, HRI, and vision-language models. My work has appeared at venues including RA-L, IROS, HRI, AAMAS, and ICRA, and I have received multiple Outstanding TA and Instructor awards for instructional excellence.
+**About me:** I am a postdoctoral researcher at [Yale University](https://www.yale.edu/) in the [Interactive Machines Group](https://interactive-machines.com/), working with Prof. [Marynel Vázquez](https://www.marynel.net/) on in-the-wild human-robot interaction and robot legibility, and part of the [NSF Science and Technology Center for Human and Robot Co-Adaptation](https://hrc-stc.org/). I completed my Ph.D. in Computer Science at CU Boulder, advised by Prof. Brad Hayes, where I developed deployable, context-aware robotics and human-centered AI at the intersection of robotics, HRI, and vision-language models. My work has appeared at venues including RA-L, IROS, HRI, AAMAS, and ICRA.
 
-<!-- **About myself:** Ph.D. in CS at CU Boulder, developing context-aware human-centered AI for real-world robotics. My research bridges Robotics, HRI, and Embodied AI to create context-aware systems that interpret semantic, social, and geometric cues. Technical expertise spans computer vision deployment, full-stack system architecture, leveraging modern techniques from probabilistic planning to Foundation Models (VLMs) for deployable embodied AI. Proven track record of publishing in top-tier venues (RA-L, HRI, AAMAS, IROS, ICRA). Award-winning educator and mentor, recognized for instructional excellence with multiple Outstanding TA and Instructor awards. -->
+**Research vision:** I build robots and AI systems that understand and adapt to people in real-world spaces like homes, stores, and hospitals, by modeling the *implicit context* (semantic, social, and physical cues) that lab settings leave out. My research spans three threads: <span class="thread-tag t-embodied">context-aware embodied AI</span>, <span class="thread-tag t-assistive">assistive and accessible robotics</span>, and <span class="thread-tag t-coadapt">human-robot and human-AI co-adaptation</span>, including how AI tools can strengthen people's own skills rather than replace them.
 
-<!-- ***I am on the job market for a faculty position starting Fall 2026.*** -->
+**Teaching and mentoring:** Great teachers drew me into computer science, and I try to pay that forward. I have taught or TA'd six courses at CU Boulder, earning multiple teaching awards, and mentored eight undergraduate and M.S. researchers. More on my [teaching](/teaching/) and [mentorship](/mentorship/) pages.
 
-**Other interests:** I enjoy playing tennis a lot (like a lot!!). On good sunny days, I also like to bike and run in the lovely city of Boulder. [(Bonus) Boulder Creek Path Fall view through my bike](https://youtube.com/playlist?list=PLEcdUQuIeys3P7XsRJMF3zriFkCa77X0j). I also like to explore local food and beverages.
-
-
-**Minor-flex** - I have more than 60 millions views on my Google Map [contributions](https://www.google.com/maps/contrib/118433183916755884441/photos/) and have received a rather vibrant pair of socks from Google. And no, that was all I ever got from them.
-
-<!-- **Research Abstract:** Real-world environments are riddled with highly unstructured scenes, challenging lighting conditions, unpredictable dynamic agents, unmodeled dynamics, and variable conditions, making is hard for most research to translate to real-world setting.
-My thesis aims to bridge this gap by interpreting and utilizing implicit environmental context in the form of semantic and social cues. Through studies demonstrating socially preferred goal-seeking navigation guidance, precise manipulation for grasping in dense, cluttered scenes, and localization leveraging semantic environmental understanding, we establish foundational methods for generating context-aware assistance and lay critical groundwork for the future development of practical, scalable assistive robotic systems. -->
-
-
-
-**Summary of some of my work:** 
+**Selected research:** 
 
 <div class="container">
     <div class="row mb-4">
@@ -38,7 +28,7 @@ My thesis aims to bridge this gap by interpreting and utilizing implicit environ
             {% include figure.liquid path="assets/img/paper/gist/zone_map.png" class="img-fluid rounded z-depth-1" %}
         </div>
         <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
-            <p><strong>Multimodal Knowledge Extraction and Spatial Grounding (In Submission):</strong> A multimodal pipeline that transforms mobile LiDAR scans into a lightweight semantic topology, enhancing spatial grounding for VLMs and enabling intent-aware search, one-shot global localization, and visually grounded language-based navigation. <a href="https://shivendraagrawal.github.io/projects/gist/">Project page</a></p>
+            <div><div><span class="thread-tag t-embodied">Embodied AI</span></div><p><strong>Multimodal Knowledge Extraction and Spatial Grounding (In Submission):</strong> Turns mobile LiDAR scans into a lightweight semantic map that grounds vision-language models in 3D space, enabling intent-aware search, localization, and language-guided navigation. <a href="https://shivendraagrawal.github.io/projects/gist/">Project page</a></p></div>
         </div>
     </div>
     <div class="row mb-4">
@@ -46,7 +36,7 @@ My thesis aims to bridge this gap by interpreting and utilizing implicit environ
             {% include figure.liquid path="assets/img/paper/shelfmcl/husky.gif" class="img-fluid rounded z-depth-1" %}
         </div>
         <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
-            <p><strong>Robust Semantic Localization (RA-L):</strong> A Semantic Particle Filter leveraging RGB-D and Visual-Inertial Odometry (VIO) to achieve state-of-the-art global localization accuracy in quasi-static, cluttered environments without external infrastructure. <a href="https://shivendraagrawal.github.io/projects/shelfmcl/">Project page</a></p>
+            <div><div><span class="thread-tag t-embodied">Embodied AI</span><span class="thread-tag t-assistive">Assistive Robotics</span></div><p><strong>Robust Semantic Localization (RA-L):</strong> A semantic particle filter for accurate global localization in cluttered, changing environments using only low-cost RGB-D and visual-inertial sensors. <a href="https://shivendraagrawal.github.io/projects/shelfmcl/">Project page</a></p></div>
         </div>
     </div>
     <div class="row mb-4">
@@ -54,7 +44,7 @@ My thesis aims to bridge this gap by interpreting and utilizing implicit environ
             {% include figure.liquid path="assets/img/paper/shelfhelp/demo.gif" class="img-fluid rounded z-depth-1" %}
         </div>
         <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
-            <p><strong>Learning Decision-Making Policies from Human Behavior (AAMAS):</strong> Learning an optimal guidance policy from human behavioral data to provide grasping guidance (featured in national media). <a href="https://shivendraagrawal.github.io/projects/shelfhelp/">Project page</a></p>
+            <div><div><span class="thread-tag t-assistive">Assistive Robotics</span><span class="thread-tag t-coadapt">Co-Adaptation</span></div><p><strong>Learning Decision-Making Policies from Human Behavior (AAMAS):</strong> A robotic cane that learns a guidance policy from human behavior to help blind users find and grasp products on store shelves (featured in national media). <a href="https://shivendraagrawal.github.io/projects/shelfhelp/">Project page</a></p></div>
         </div>
     </div>
     <div class="row mb-4">
@@ -62,7 +52,7 @@ My thesis aims to bridge this gap by interpreting and utilizing implicit environ
             {% include figure.liquid path="assets/img/demo_smartcane.jpeg" class="img-fluid rounded z-depth-1" %}
         </div>
         <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
-            <p><strong>Designing Embodied AI for Social Context (IROS):</strong> A perceptive robotic cane that used models from psychology to identify socially appropriate seating locations (optimizing for privacy and intimacy). <a href="https://shivendraagrawal.github.io/projects/social_guidance/">Project page</a></p>
+            <div><div><span class="thread-tag t-assistive">Assistive Robotics</span></div><p><strong>Designing Embodied AI for Social Context (IROS):</strong> A perceptive robotic cane that uses models from psychology to guide users to socially appropriate seats, respecting privacy and personal space. <a href="https://shivendraagrawal.github.io/projects/social_guidance/">Project page</a></p></div>
         </div>
     </div>
     <div class="row mb-4">
@@ -70,7 +60,9 @@ My thesis aims to bridge this gap by interpreting and utilizing implicit environ
             {% include figure.liquid path="assets/img/blog/RARE/fig_user_study1.jpg" class="img-fluid rounded z-depth-1" %}
         </div>
         <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
-            <p><strong>Explainable Robotic Coaching (HRI):</strong> A framework for a robot to infer a human partner's likely mental model by observing suboptimal actions to provide targeted coaching with justifications <strong>(HRI '19 Best Paper Runner-up)</strong>. <a href="https://shivendraagrawal.github.io/projects/explainable_ai/">Project page</a></p>
+            <div><div><span class="thread-tag t-coadapt">Co-Adaptation</span></div><p><strong>Explainable Robotic Coaching (HRI):</strong> A robot infers a person's mental model from their mistakes and coaches them with explanations <strong>(HRI '19 Best Paper Runner-up)</strong>. <a href="https://shivendraagrawal.github.io/projects/explainable_ai/">Project page</a></p></div>
         </div>
     </div>
 </div>
+
+**Other interests:** Outside of research, I enjoy playing tennis, biking, running, and exploring local food.

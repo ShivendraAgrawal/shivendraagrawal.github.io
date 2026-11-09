@@ -6,13 +6,13 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Shivendra
 middle_name: 
 last_name: Agrawal
-email: shivendra.agrawal@colorado.edu
+email: shivendra.agrawal@yale.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Shivendra Agrawal, Postdoctoral Researcher at Yale University working on robotics, human-robot interaction, and embodied AI.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   
-keywords: HRI, Ph.D., Robotics, Assistive Technology, Machine Learning  # add your own keywords or leave empty
+keywords: Robotics, Human-Robot Interaction, HRI, Embodied AI, Vision-Language Models, Assistive Technology, Semantic Localization, Yale
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -128,13 +128,7 @@ disqus_shortname: # al-folio # put your disqus shortname
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
-  - name: Google Blog
-    posts:
-      - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
-        published_date: 2024-05-14
+external_sources: []
 
 # -----------------------------------------------------------------------------
 # Newsletter

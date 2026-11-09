@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ShelfHelp - An assitive robotic system to provide grasp guidance for grocery shopping
+title: ShelfHelp - An assistive robotic system to provide grasp guidance for grocery shopping
 date: 2022-05-20
 description: 2023 - Published paper @ AAMAS 23
 img: assets/img/paper/shelfhelp/demo.gif
@@ -8,6 +8,7 @@ img: assets/img/paper/shelfhelp/demo.gif
 # redirect: https://unsplash.com
 importance: 1
 category: work
+threads: [assistive, coadapt]
 ---
 
     Team members:

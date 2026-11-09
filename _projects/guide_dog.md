@@ -7,6 +7,7 @@ img: assets/img/ahri.png
 date: 2019-05-20
 importance: 3
 category: work
+threads: [assistive]
 ---
 
 We emulated a guide dog in indoor scenario to guide the human to the nearest exit. The robot

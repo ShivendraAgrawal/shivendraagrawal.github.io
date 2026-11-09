@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /press/
-title: Press Coverage
+title: Press
 description: 
 nav: true
-nav_order: 5
+nav_order: 7
 ---
 
 <!-- 1. <strong>KDVR Fox31 </strong>[CU students developing ‘smart cane’ to help visual impairment](https://kdvr.com/news/local/cu-students-developing-smart-cane-to-help-visual-impairment/)

@@ -6,6 +6,7 @@ description: 2026 - In Submission
 img: assets/img/paper/gist/zone_map.png
 importance: 1
 category: work
+threads: [embodied]
 ---
 
     Team members:

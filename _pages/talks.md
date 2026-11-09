@@ -4,7 +4,7 @@ permalink: /talks/
 title: Talks
 description:
 nav: true
-nav_order: 8
+nav_order: 6
 ---
 ## Thesis Defense
 
@@ -16,6 +16,14 @@ nav_order: 8
 ---
 
 ## Invited Talks & Guest Lectures
+
+*   **Research Talk**  
+    *Yale University, New Haven, CT*  
+    June 5, 2026
+
+*   **Invited Talk**  
+    *National Institute of Standards and Technology (NIST)*  
+    June 3, 2026
 
 *   **Hidden Markov Models in Intro to AI**  
     *Guest Lecture, CSCI 3202: Introduction to Artificial Intelligence, CU Boulder*  
