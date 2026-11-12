@@ -31,7 +31,7 @@ We developed a proof-of-concept augmented reality ARKit app that can parse text 
 
   <div class="row">
       <div class="col-sm mt-3 mt-md-0" style="vertical-align:middle">
-          {% include figure.liquid path="assets/img/blog/arkit/GIF1.gif" title="Spatial Mapping" class="img-fluid rounded z-depth-1" %}
+          {% include figure.liquid path="assets/img/blog/arkit/GIF1.gif" title="Spatial Mapping" class="img-fluid rounded" %}
       </div>
   </div>
 
@@ -43,7 +43,7 @@ We developed a proof-of-concept augmented reality ARKit app that can parse text 
 
   <div class="row">
       <div class="col-sm mt-3 mt-md-0" style="vertical-align:middle">
-          {% include figure.liquid path="assets/img/blog/arkit/GIF2.gif" title="Text Parsing" class="img-fluid rounded z-depth-1" %}
+          {% include figure.liquid path="assets/img/blog/arkit/GIF2.gif" title="Text Parsing" class="img-fluid rounded" %}
       </div>
   </div>
 
@@ -60,7 +60,7 @@ We developed a proof-of-concept augmented reality ARKit app that can parse text 
 
   <div class="row">
       <div class="col-sm mt-3 mt-md-0" style="vertical-align:middle">
-          {% include figure.liquid path="assets/img/blog/arkit/GIF3.gif" title="Text Editor" class="img-fluid rounded z-depth-1" %}
+          {% include figure.liquid path="assets/img/blog/arkit/GIF3.gif" title="Text Editor" class="img-fluid rounded" %}
       </div>
   </div>
 
@@ -74,7 +74,7 @@ We developed a proof-of-concept augmented reality ARKit app that can parse text 
 
   <div class="row">
       <div class="col-sm mt-3 mt-md-0" style="vertical-align:middle">
-          {% include figure.liquid path="assets/img/blog/arkit/GIF4.gif" title="3D Objects" class="img-fluid rounded z-depth-1" %}
+          {% include figure.liquid path="assets/img/blog/arkit/GIF4.gif" title="3D Objects" class="img-fluid rounded" %}
       </div>
   </div>
 

@@ -27,7 +27,7 @@ We are working towards making an end-to-end system that can assist with independ
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfhelp/demo.gif" title="System in action" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfhelp/demo.gif" title="System in action" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">
@@ -44,7 +44,7 @@ We are working towards making an end-to-end system that can assist with independ
 <br>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfhelp/double_usecase.png" title="Our system's capabilities across tasks" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfhelp/double_usecase.png" title="Our system's capabilities across tasks" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">
@@ -61,7 +61,7 @@ We are working towards making an end-to-end system that can assist with independ
 <br>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfhelp/system_diagram.png" title="System architecture" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfhelp/system_diagram.png" title="System architecture" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">
@@ -73,7 +73,7 @@ We are working towards making an end-to-end system that can assist with independ
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfhelp/cv_pipeline_v1.png" title="CV pipeline overview" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfhelp/cv_pipeline_v1.png" title="CV pipeline overview" class="img-fluid rounded" %}
     </div>
 </div>
 
@@ -85,7 +85,7 @@ We are working towards making an end-to-end system that can assist with independ
 <br>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfhelp/verbal_planner.png" title="Manipulation Guidance Overview" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfhelp/verbal_planner.png" title="Manipulation Guidance Overview" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">

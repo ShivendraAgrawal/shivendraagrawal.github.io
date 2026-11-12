@@ -24,7 +24,7 @@ Unlike traditional methods that rely on expensive LiDAR or detailed geometric ma
 
 <div class="row justify-content-center">
     <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/paper/shelfmcl/husky.gif" title="Our system's capabilities across tasks" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfmcl/husky.gif" title="Our system's capabilities across tasks" class="img-fluid rounded" %}
     </div>
 </div>
 
@@ -37,7 +37,7 @@ The core of our solution is a particle filter that fuses visual-inertial odometr
 
 <div class="row justify-content-center">
     <div class="col-sm-6 mt-3 mt-md-0 d-flex align-items-stretch" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfmcl/sensors.png" title="Sensors Used in the System" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfmcl/sensors.png" title="Sensors Used in the System" class="img-fluid rounded" %}
     </div>
 </div>
 
@@ -49,10 +49,10 @@ The core of our solution is a particle filter that fuses visual-inertial odometr
 
 <div class="row justify-content-center">
     <div class="col-sm-4 mt-3 mt-md-0 mx-3" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfmcl/maria_cart.gif" title="Mountable Rig on a Cart" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfmcl/maria_cart.gif" title="Mountable Rig on a Cart" class="img-fluid rounded" %}
     </div>
     <div class="col-sm-4 mt-3 mt-md-0 mx-3" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfmcl/dusty_wearable.gif" title="Wearable Rig for Assistive Technology" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfmcl/dusty_wearable.gif" title="Wearable Rig for Assistive Technology" class="img-fluid rounded" %}
     </div>
 </div>
 
@@ -64,10 +64,10 @@ We trained a custom classifier to classify products into a fixed number of class
 
 <div class="row justify-content-center">
     <div class="col-sm-4 mt-3 mt-md-0 mx-3" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfmcl/classification_rgb.gif" title="Semantic Mapping - Classification" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfmcl/classification_rgb.gif" title="Semantic Mapping - Classification" class="img-fluid rounded" %}
     </div>
     <div class="col-sm-4 mt-3 mt-md-0 mx-3" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfmcl/classification_d.gif" title="Semantic Mapping - Classification" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfmcl/classification_d.gif" title="Semantic Mapping - Classification" class="img-fluid rounded" %}
     </div>
 </div>
 
@@ -76,13 +76,13 @@ Real-world pose estimates obtained through inverse camera projection are refined
 
 <div class="row justify-content-center align-items-center">
     <div class="col-sm-4 mt-3 mt-md-0" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfmcl/raycast.gif" title="Product Clusters After Pose Correction" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfmcl/raycast.gif" title="Product Clusters After Pose Correction" class="img-fluid rounded" %}
     </div>
     <div class="col-sm-1 text-center" style="font-size: 2em;">
         <i class="fas fa-arrow-right"></i>
     </div>
     <div class="col-sm-4 mt-3 mt-md-0" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfmcl/shelfaware_product_map.png" title="ShelfAware Product Map" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfmcl/shelfaware_product_map.png" title="ShelfAware Product Map" class="img-fluid rounded" %}
     </div>
 </div>
 
@@ -92,7 +92,7 @@ Semantic information is fused with the depth observation to in a Monte Carlo Loc
 
 <div class="row justify-content-center">
     <div class="col-sm-12 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/paper/shelfmcl/overview_v3.png" title="System Architecture" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfmcl/overview_v3.png" title="System Architecture" class="img-fluid rounded" %}
     </div>
 </div>
 
@@ -109,7 +109,7 @@ We evaluated ShelfAware in a semantically dense retail environment (a mock store
 
 <div class="row justify-content-center">
     <div class="col-sm-10 mt-3 mt-md-0 mx-3" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/shelfmcl/sample_trajectories.png" title="Sample Trajectories" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/shelfmcl/sample_trajectories.png" title="Sample Trajectories" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">

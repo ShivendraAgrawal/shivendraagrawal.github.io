@@ -14,7 +14,7 @@ video: assets/video/yale/corridor_thumb.mp4
 
 <div class="row justify-content-center">
     <div class="col-sm-12 mt-3 mt-md-0">
-        {% include video.liquid path="assets/video/yale/corridor.mp4" class="img-fluid rounded z-depth-1" autoplay=true loop=true muted=true controls=false poster="assets/img/paper/yale/corridor_poster.jpg" %}
+        {% include video.liquid path="assets/video/yale/corridor.mp4" class="img-fluid rounded" autoplay=true loop=true muted=true controls=false poster="assets/img/paper/yale/corridor_poster.jpg" %}
     </div>
 </div>
 

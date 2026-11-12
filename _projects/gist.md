@@ -21,7 +21,7 @@ img_position: top
 
 <div class="row justify-content-center">
     <div class="col-sm-12 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/paper/gist/system.png" title="The GIST Multimodal Knowledge Extraction Architecture" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/gist/system.png" title="The GIST Multimodal Knowledge Extraction Architecture" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">
@@ -33,7 +33,7 @@ Navigating and searching complex, densely packed environments such as retail sto
 
 <div class="row justify-content-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/paper/gist/topology_products.png" title="Semantic Topology" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/gist/topology_products.png" title="Semantic Topology" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">
@@ -43,7 +43,7 @@ Navigating and searching complex, densely packed environments such as retail sto
 ## 1. Semantic Zone Classification
 <div class="row justify-content-center">
     <div class="col-sm-8 mt-3 mt-md-0 d-flex align-items-stretch" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/gist/zone_map.png" title="Semantic Zone Classification" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/gist/zone_map.png" title="Semantic Zone Classification" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">
@@ -53,10 +53,10 @@ Navigating and searching complex, densely packed environments such as retail sto
 ## 2. Intent-Aware Search & Category Estimation
 <div class="row justify-content-center">
     <div class="col-sm-6 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/paper/gist/biryani_ingredients.png" title="Biryani Ingredients" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/gist/biryani_ingredients.png" title="Biryani Ingredients" class="img-fluid rounded" %}
     </div>
     <div class="col-sm-6 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/paper/gist/vegan_protein.png" title="Vegan Protein" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/gist/vegan_protein.png" title="Vegan Protein" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">
@@ -68,7 +68,7 @@ The zero-shot textual semantic localizer accurately estimates the user pose from
 
 <div class="row justify-content-center">
     <div class="col-sm-6 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/paper/gist/mirror_poses_cropped.png" title="Semantic Aliasing in Localization" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/gist/mirror_poses_cropped.png" title="Semantic Aliasing in Localization" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">
@@ -86,7 +86,7 @@ The generative routing engine produces robust, egocentric instructions to aid un
 
 <div class="row justify-content-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/paper/gist/instruction_eval_pastel.png" title="Multi-Criteria LLM Evaluation" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/gist/instruction_eval_pastel.png" title="Multi-Criteria LLM Evaluation" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">

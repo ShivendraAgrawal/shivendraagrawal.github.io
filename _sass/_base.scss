@@ -1550,3 +1550,18 @@ p .thread-tag { margin: 0; }
     display: block;
   }
 }
+
+// Slightly smaller homepage portrait so the intro text has more room
+@media (min-width: 576px) {
+  .profile {
+    width: 24%;
+    max-width: 230px;
+  }
+}
+
+// Light mode accent: dark navy instead of the theme's default magenta
+:root {
+  --global-theme-color: #1a4f8b;
+  --global-hover-color: #2d6cb5;
+  --global-code-bg-color: rgba(26, 79, 139, 0.05);
+}

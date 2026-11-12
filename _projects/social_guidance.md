@@ -30,7 +30,7 @@ blind people to exercise the nuances of seat choices.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0" style="vertical-align:middle">
-        {% include figure.liquid path="assets/img/paper/social_guidance/social_guidance_demo.gif" title="System in action" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/paper/social_guidance/social_guidance_demo.gif" title="System in action" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">
