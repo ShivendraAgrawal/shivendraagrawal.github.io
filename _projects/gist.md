@@ -7,6 +7,7 @@ img: assets/img/paper/gist/zone_map.png
 importance: 1
 category: work
 threads: [embodied]
+img_position: top
 ---
 
     Team members:

@@ -2,70 +2,102 @@
 layout: page
 permalink: /teaching/
 title: Teaching
-description: 
+description:
 nav: true
 nav_order: 4
 ---
 
 ## Instructor
-* I taught the undergraduate **Algorithms CSCI 3104** class in Fall 2019 with **109** students in my section. I co-created the material with [Dr. Rhonda Hoenigman](https://experts.colorado.edu/display/fisid_152997) and together we taught more than 250 students.
-<!-- I received the highest [FCQ](https://www.colorado.edu/fcq/boulder-fcq-results) as an instructor for that class in recent times.  -->
-* I was awarded the **Best Part Time Graduate Instructor 2019-2020** for the above.
-* You can find my [live handwritten lecture notes here](https://drive.google.com/drive/folders/1vRfMC7lCrVAZzo3dz8qBtgsNyankIEty?usp=sharing).
 
----
+<div class="info-card featured">
+  <h3>Algorithms</h3>
+  <div class="meta">Undergraduate &middot; Instructor of record &middot; Fall 2019</div>
+  <span class="award-badge"><i class="fa-solid fa-trophy"></i>Best Part-Time Graduate Instructor, 2019-2020</span>
+  <ul>
+    <li>Taught a section of <strong>109</strong> students; co-created the course material with <a href="https://experts.colorado.edu/display/fisid_152997">Dr. Rhonda Hoenigman</a>, together teaching more than 250 students.</li>
+  </ul>
+  <a class="link-pill" href="https://drive.google.com/drive/folders/1vRfMC7lCrVAZzo3dz8qBtgsNyankIEty?usp=sharing" target="_blank" rel="noopener"><i class="fa-solid fa-pen-nib"></i>Handwritten lecture notes</a>
+</div>
+
 ## Teaching Assistant
 
-1. **CSCI 3104 Algorithms** - *Outstanding TA award (2017-2018, 2018-2019)*
-    - Led weekly recitations and office hours
-    - Developed [automated scripts](https://github.com/ShivendraAgrawal/Sheet_to_Moodle) to transfer feedback to Moodle, reducing manual effort and turnaround time
-2. **CSCI 3002 HCI** - *2020 Fall*
-    - Led weekly recitations and office hours
-    - Introduced modern mobile- and web-centric examples, aligning course content with current UI/UX practices
-3. **CSCI 3302 Intro to Robotics** - *Outstanding TA award (David T. Spalding Graduate Teaching Fund Fellowship), 2021-2022*
-    - Led weekly recitations and office hours
-    - Designed the course final project
-    - Designed simulation-based automated grading scripts, enabling the course to scale from ~40 to ~120 students
-4. **CSCI 4302/5302 Advanced Robotics** - *2023 Spring*
-    - Led weekly recitations and office hours
-5. **CSCI 5322 Algorithmic Foundations of Human-Robot Interaction** - *2025 Fall*
-    - Led office hours and supervised projects
-6. **CSCI 3202 Introduction to Artificial Intelligence** - *2026 Spring*
-    - Led office hours, made questions for exams, gave guest lecture, and supervised projects
-
----
-## YouTube 
-My tutorial on 3-CNF SAT to Subset Sum reduction is the **most watched video on the topic** on the internet. Check out the nice comments I got :)
-
-<!-- [[Link to the YouTube tutorial]](https://youtu.be/k8RkYp5KhhU?si=-LQI-fJ0rnPpG4gg)
-<div class="video-container">
-    <iframe src="https://www.youtube.com/embed/k8RkYp5KhhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div> -->
-<!-- use unique classes to avoid theme collisions -->
-<div class="yt-wrap half-left">
-  <div class="yt-aspect">
-    <iframe
-      src="https://www.youtube.com/embed/k8RkYp5KhhU"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+<div class="info-grid">
+  <div class="info-card">
+    <h4>Introduction to Artificial Intelligence</h4>
+    <div class="meta">Undergraduate &middot; Spring 2026</div>
+    <ul>
+      <li>Led office hours, wrote exam questions, and supervised projects</li>
+      <li>Gave a <a href="/talks/">guest lecture on Hidden Markov Models</a></li>
+    </ul>
+  </div>
+  <div class="info-card">
+    <h4>Algorithmic Human-Robot Interaction</h4>
+    <div class="meta">Graduate &middot; Fall 2025</div>
+    <ul>
+      <li>Led office hours and supervised projects</li>
+    </ul>
+  </div>
+  <div class="info-card">
+    <h4>Advanced Robotics</h4>
+    <div class="meta">Undergraduate/Graduate &middot; Spring 2023</div>
+    <ul>
+      <li>Led weekly recitations and office hours</li>
+    </ul>
+  </div>
+  <div class="info-card">
+    <h4>Introduction to Robotics</h4>
+    <div class="meta">Undergraduate &middot; 2021-2022</div>
+    <span class="award-badge"><i class="fa-solid fa-trophy"></i>Outstanding TA (Spalding Teaching Fellowship)</span>
+    <ul>
+      <li>Led weekly recitations and office hours</li>
+      <li>Designed the course final project</li>
+      <li>Built simulation-based autograding that helped the course grow from ~40 to ~120 students</li>
+    </ul>
+  </div>
+  <div class="info-card">
+    <h4>Human-Computer Interaction</h4>
+    <div class="meta">Undergraduate &middot; Fall 2020</div>
+    <ul>
+      <li>Led weekly recitations and office hours</li>
+      <li>Introduced modern mobile- and web-centric examples aligned with current UI/UX practice</li>
+    </ul>
+  </div>
+  <div class="info-card">
+    <h4>Algorithms</h4>
+    <div class="meta">Undergraduate &middot; 2017-2019</div>
+    <span class="award-badge"><i class="fa-solid fa-trophy"></i>Outstanding TA, 2017-18</span>
+    <span class="award-badge"><i class="fa-solid fa-trophy"></i>Outstanding TA, 2018-19</span>
+    <ul>
+      <li>Led weekly recitations and office hours</li>
+      <li>Built <a href="https://github.com/ShivendraAgrawal/Sheet_to_Moodle">automated scripts</a> to transfer feedback to Moodle, reducing manual effort and turnaround time</li>
+    </ul>
   </div>
 </div>
 
----
-## Student Evals
-Here is a summary of the teaching evaluations provided by my students.
+## Public Teaching
 
-**You can also find the detailed evaluations with both objective and subjective metrics for each term [[here]](https://drive.google.com/file/d/1aUJi3E5z0h-DDdLhtGoowtAWQWyqjFk0/view?usp=sharing), and the subjective feedback extracted from them [[here]](/assets/pdf/SomePastFCQs.pdf).**
+<div class="split-row">
+  <div class="split-media">
+    <div class="yt-aspect">
+      <iframe src="https://www.youtube.com/embed/k8RkYp5KhhU" title="3-CNF SAT to Subset Sum reduction tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+  <div class="split-text">
+    <span class="award-badge"><i class="fa-brands fa-youtube"></i>Most-watched video on the topic</span>
+    <p>My YouTube tutorial on the <strong>3-CNF SAT to Subset Sum reduction</strong>. Comments from learners around the world are some of my favorite feedback.</p>
+  </div>
+</div>
 
-(These are by far my most cherished professional achievements.)
+## Student Evaluations
 
-<object data="/assets/pdf/Summary%20Teaching%20Evaluation.pdf#toolbar=1"
-        type="application/pdf"
-        width="100%" height="800px">
-  <p>Your browser does not support PDFs. 
-     <a href="/assets/pdf/Summary%20Teaching%20Evaluation.pdf">Download instead</a>.
-  </p>
+<p>Here is a summary of the teaching evaluations provided by my students. These are by far my most cherished professional achievements.</p>
+
+<p>
+  <a class="link-pill" href="https://drive.google.com/file/d/1aUJi3E5z0h-DDdLhtGoowtAWQWyqjFk0/view?usp=sharing" target="_blank" rel="noopener"><i class="fa-solid fa-chart-column"></i>Detailed evaluations by term</a>
+  <a class="link-pill" href="/assets/pdf/SomePastFCQs.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-comment"></i>Student comments</a>
+  <a class="link-pill" href="/assets/pdf/Summary%20Teaching%20Evaluation.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i>Summary (PDF)</a>
+</p>
+
+<object data="/assets/pdf/Summary%20Teaching%20Evaluation.pdf#toolbar=1" type="application/pdf" width="100%" height="800px">
+  <p>Your browser does not support embedded PDFs. <a href="/assets/pdf/Summary%20Teaching%20Evaluation.pdf">Open the summary instead</a>.</p>
 </object>

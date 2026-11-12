@@ -9,6 +9,7 @@ img: assets/img/blog/arkit/GIF4.gif
 importance: 1
 category: work
 threads: [assistive]
+img_position: center 80%
 ---
 
 

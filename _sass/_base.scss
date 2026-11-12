@@ -1421,3 +1421,132 @@ html[data-theme="dark"] .thread-tag {
   &.t-assistive { color: #7fd8a6; background: rgba(127, 216, 166, 0.15); }
   &.t-coadapt { color: #ffab7a; background: rgba(255, 171, 122, 0.15); }
 }
+
+// ---------------------------------------------------------------------------
+// Teaching / Mentorship / Talks page components
+// ---------------------------------------------------------------------------
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.info-card {
+  border: 1px solid var(--global-divider-color);
+  border-left: 4px solid var(--global-theme-color);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  background: var(--global-card-bg-color);
+  transition: box-shadow 0.2s ease;
+  &:hover { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+  &.featured { border-left-width: 6px; margin-bottom: 1.75rem; }
+  h3, h4 { font-size: 1.1rem; font-weight: 600; margin: 0 0 0.3rem; line-height: 1.35; }
+  .meta { font-size: 0.95rem; color: var(--global-text-color-light); margin-bottom: 0.45rem; }
+  ul { margin: 0.4rem 0 0; padding-left: 1.2rem; font-size: 1rem; line-height: 1.55; }
+  p { margin: 0.4rem 0 0; font-size: 1rem; line-height: 1.55; }
+}
+
+.award-badge {
+  display: inline-block;
+  padding: 0.12em 0.6em;
+  margin: 0.15em 0.3em 0.15em 0;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #7a4f00;
+  background: rgba(214, 158, 46, 0.16);
+  i { margin-right: 0.3em; }
+}
+html[data-theme="dark"] .award-badge { color: #f3c969; background: rgba(243, 201, 105, 0.15); }
+
+.link-pill {
+  display: inline-block;
+  padding: 0.15em 0.7em;
+  margin: 0.35rem 0.35rem 0 0;
+  border: 1px solid var(--global-theme-color);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--global-theme-color) !important;
+  text-decoration: none !important;
+  &:hover { background: var(--global-theme-color); color: var(--global-hover-text-color) !important; }
+  i { margin-right: 0.3em; }
+}
+
+.person-card {
+  display: block;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  background: var(--global-card-bg-color);
+  .name { font-weight: 600; line-height: 1.2; }
+  .outcome { font-size: 0.95rem; color: var(--global-text-color-light); line-height: 1.4; }
+}
+
+.timeline {
+  position: relative;
+  margin: 0.5rem 0 2rem;
+  padding-left: 1.4rem;
+  border-left: 2px solid var(--global-divider-color);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.4rem;
+  &::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.4rem - 7px);
+    top: 0.45rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--global-theme-color);
+    border: 2px solid var(--global-bg-color);
+  }
+  .when { font-size: 0.95rem; color: var(--global-text-color-light); }
+  .talk-title { font-weight: 600; font-size: 1.05rem; margin: 0.15rem 0; line-height: 1.4; }
+  .where { font-size: 1rem; }
+}
+.type-badge {
+  display: inline-block;
+  padding: 0.05em 0.55em;
+  margin-left: 0.4em;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  vertical-align: middle;
+  color: var(--global-theme-color);
+  background: var(--global-divider-color);
+}
+
+.split-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  > .split-media { flex: 1 1 320px; max-width: 560px; }
+  > .split-text { flex: 1 1 240px; }
+}
+
+// Homepage paragraph labels (About me, Research vision, ...)
+.para-label {
+  color: #8b1e3f; // burgundy, matches the CV accent
+  font-weight: 700;
+}
+html[data-theme="dark"] .para-label { color: #e8909f; }
+p .thread-tag { margin: 0; }
+
+// Project cards: uniform media height, cropped to fit
+.card-media {
+  height: 190px;
+  overflow: hidden;
+  border-radius: 0.25rem 0.25rem 0 0;
+  figure, picture { margin: 0; height: 100%; display: block; }
+  img, video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--media-pos, center);
+    display: block;
+  }
+}

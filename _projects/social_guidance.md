@@ -8,6 +8,7 @@ img: assets/img/demo_smartcane.jpeg
 importance: 1
 category: work
 threads: [assistive]
+img_position: top
 ---
     Team members:
     Shivendra Agrawal (Lead)
