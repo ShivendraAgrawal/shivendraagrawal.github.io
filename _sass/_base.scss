@@ -1565,3 +1565,41 @@ p .thread-tag { margin: 0; }
   --global-hover-color: #2d6cb5;
   --global-code-bg-color: rgba(26, 79, 139, 0.05);
 }
+
+// Project-page result charts: plain horizontal bars, own method in the accent color
+.chart-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 1rem 2rem;
+  margin: 1.25rem 0 0.5rem;
+}
+.bar-chart {
+  .chart-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .bar-row {
+    display: grid;
+    grid-template-columns: minmax(7.5rem, 38%) 1fr 2.6rem;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.3rem 0;
+    font-size: 0.92rem;
+    line-height: 1.2;
+  }
+  .bar-track { height: 14px; border-left: 1px solid var(--global-divider-color); }
+  .bar {
+    height: 100%;
+    min-width: 2px;
+    border-radius: 0 4px 4px 0;
+    background: var(--global-text-color-light);
+    opacity: 0.45;
+  }
+  .bar-row.ours { font-weight: 700; }
+  .bar-row.ours .bar { background: var(--global-theme-color); opacity: 1; }
+  .bar-value { text-align: right; font-variant-numeric: tabular-nums; }
+  .bar-group { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--global-text-color-light); margin: 0.7rem 0 0.2rem; }
+}
+.chart-note { font-size: 0.85rem; color: var(--global-text-color-light); margin-bottom: 1.25rem; }
+.compare-quote {
+  font-size: 0.95rem;
+  p { margin-bottom: 0.4rem; }
+  .verdict { font-size: 0.85rem; color: var(--global-text-color-light); }
+}

@@ -33,10 +33,18 @@ social: true # includes social icons at the bottom of the page
     </div>
     <div class="row mb-4">
         <div class="col-sm-2 mt-2 mt-md-0">
-            {% include figure.liquid path="assets/img/paper/gist/zone_map.png" class="img-fluid rounded" %}
+            {% include video.liquid path="assets/video/gist/rgb_depth_thumb.mp4" class="img-fluid rounded" autoplay=true loop=true muted=true controls=false %}
         </div>
         <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
-            <div><div><span class="thread-tag t-embodied">Embodied AI</span></div><p><strong>Multimodal Knowledge Extraction and Spatial Grounding (In Submission):</strong> Turns mobile LiDAR scans into a lightweight semantic map that grounds vision-language models in 3D space, enabling intent-aware search, localization, and language-guided navigation. <a href="https://shivendraagrawal.github.io/projects/gist/">Project page</a></p></div>
+            <div><div><span class="thread-tag t-embodied">Embodied AI</span></div><p><strong>Grounded Route Instructions from a Semantic Topology (In Submission):</strong> What does a VLM agent need to give people good directions? A lightweight semantic topology built from a single phone or robot scan shows that explicit route facts and validated landmarks, not richer visual input, drive instruction quality. <a href="/projects/gist/">Project page</a></p></div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-sm-2 mt-2 mt-md-0">
+            {% include video.liquid path="assets/video/vilamcl/go1_hallway_thumb.mp4" class="img-fluid rounded" autoplay=true loop=true muted=true controls=false %}
+        </div>
+        <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
+            <div><div><span class="thread-tag t-embodied">Embodied AI</span></div><p><strong>Vision-Language Monte Carlo Localization (In Submission):</strong> Open-vocabulary VLM descriptions as the observation model in a particle filter, letting a quadruped and a smartphone localize globally in geometrically repetitive offices and grocery stores where lidar-only methods fail. <a href="/projects/vilamcl/">Project page</a></p></div>
         </div>
     </div>
     <div class="row mb-4">
