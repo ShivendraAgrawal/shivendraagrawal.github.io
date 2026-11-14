@@ -14,7 +14,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-<span class="para-label">About me:</span> I am a postdoctoral researcher at [Yale University](https://www.yale.edu/) in the [Interactive Machines Group](https://interactive-machines.com/), working with Prof. [Marynel Vázquez](https://www.marynel.net/) on multi-robot HRI in shared workspaces, and part of the [NSF Science and Technology Center for Human and Robot Co-Adaptation](https://hrc-stc.org/). I completed my Ph.D. in Computer Science at CU Boulder, advised by Prof. Brad Hayes, where I developed deployable, context-aware robotics and human-centered AI at the intersection of robotics, HRI, and vision-language models. My work has appeared at venues including RA-L, IROS, HRI, AAMAS, and ICRA. My research has been supported by a competitive graduate research grant, a dissertation completion fellowship, and an industry collaboration with NEC Corporation.
+<span class="para-label">About me:</span> I am a postdoctoral researcher at [Yale University](https://www.yale.edu/) in the [Interactive Machines Group](https://interactive-machines.com/), working with Prof. [Marynel Vázquez](https://www.marynel.net/) on multi-robot HRI in shared workspaces, and part of the [NSF Science and Technology Center for Human and Robot Co-Adaptation](https://hrc-stc.org/). I completed my Ph.D. in Computer Science at CU Boulder, advised by Prof. Brad Hayes, where I developed deployable, context-aware robotics and human-centered AI, from semantic mapping and localization to assistive guidance, at the intersection of robotics, HRI, and vision-language models. My work has appeared at venues including RA-L, IROS, HRI, AAMAS, and ICRA. My research has been supported by a competitive graduate research grant, a dissertation completion fellowship, and an industry collaboration with NEC Corporation.
 
 <span class="para-label">Research vision:</span> I build robots and AI systems that understand and adapt to people in real-world spaces like homes, stores, and hospitals, by modeling the *implicit context* (semantic, social, and physical cues) that lab settings leave out. My research spans three threads: <span class="thread-tag t-embodied">context-aware embodied AI</span>, <span class="thread-tag t-assistive">assistive robotics</span>, and <span class="thread-tag t-coadapt">human-robot co-adaptation</span>.
 
@@ -41,10 +41,10 @@ social: true # includes social icons at the bottom of the page
     </div>
     <div class="row mb-4">
         <div class="col-sm-2 mt-2 mt-md-0">
-            {% include video.liquid path="assets/video/vilamcl/go1_hallway_thumb.mp4" class="img-fluid rounded" autoplay=true loop=true muted=true controls=false %}
+            {% include video.liquid path="assets/video/vlmloc/go1_hallway_thumb.mp4" class="img-fluid rounded" autoplay=true loop=true muted=true controls=false %}
         </div>
         <div class="col-sm-10 mt-2 mt-md-0 d-flex align-items-center">
-            <div><div><span class="thread-tag t-embodied">Embodied AI</span></div><p><strong>Vision-Language Monte Carlo Localization (In Submission):</strong> Open-vocabulary VLM descriptions as the observation model in a particle filter, letting a quadruped and a smartphone localize globally in geometrically repetitive offices and grocery stores where lidar-only methods fail. <a href="/projects/vilamcl/">Project page</a></p></div>
+            <div><div><span class="thread-tag t-embodied">Embodied AI</span></div><p><strong>VLM-Enhanced Global Localization (In Submission):</strong> Open-vocabulary VLM descriptions as the observation model in a particle filter, letting robots localize globally in geometrically repetitive offices and grocery stores where lidar-only methods fail. <a href="/projects/vlm_localization/">Project page</a></p></div>
         </div>
     </div>
     <div class="row mb-4">

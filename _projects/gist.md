@@ -149,7 +149,7 @@ The same topology supports other tasks people need before and during navigation.
     <b>Zone classification.</b> Products are grouped into 18 zones and spread over the walkable floor plan, revealing structure such as the store's organic section without it being labeled.
 </div>
 
-**Localization from a single photo.** Matching the open-vocabulary description of one image against the topology gives coarse pose proposals, with median errors of 2.69 m (grocery) and 2.42 m (office). Turning this signal into full global localization and tracking is the subject of [ViLa-MCL](/projects/vilamcl/).
+**Localization from a single photo.** Matching the open-vocabulary description of one image against the topology gives coarse pose proposals, with median errors of 2.69 m (grocery) and 2.42 m (office). Turning this signal into full global localization and tracking is the subject of [VLM-GLoc](/projects/vlm_localization/).
 
 ## Paper
 <div class="publications">
